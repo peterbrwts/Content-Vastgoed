@@ -18,8 +18,8 @@ export const HomeItems = (S: StructureBuilder) =>
             .title('Preview')
             .options({
               url: (doc: any) => doc?.slug?.current 
-              ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/preview?page=contact`
-              : `${process.env.NEXT_PUBLIC_SITE_URL}/api/preview?page=contact`,
+              ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/preview?page=home`
+              : `${process.env.NEXT_PUBLIC_SITE_URL}/api/preview?page=home`,
             })
             .title('Preview'),
         ])

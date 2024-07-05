@@ -20,7 +20,7 @@ export default function HomeCaseStudies({ caseStudies }: {
           className='-left-[640px] top-0 absolute text-[64px] md:text-[160px] font-extralight whitespace-nowrap' 
           style={{ x }}
         >
-          Case Studies ✦ Case Studies ✦ Case Studies ✦ Case Studies ✦ Case Studies ✦ Case Studies
+          Ontdek de nieuwste panden te koop bij Guy Content
         </motion.div>
         <Grid className='lg:grid-cols-3 gap-8 md:gap-14 lg:gap-6 w-full'>
           {caseStudies?.map((item) => (

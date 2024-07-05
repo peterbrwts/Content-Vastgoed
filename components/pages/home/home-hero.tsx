@@ -45,11 +45,11 @@ export default function HomeHero({ ...props }: {
           <Box>
             <Image 
               src={image}
-              width={250}
-              height={350}
-              sizes="(max-width: 640px) 100px"
+              width={450}
+              height={550}
+              sizes="(max-width: 100px) 2000px"
               alt='Image of Brooke'
-              className='w-24 md:w-40 lg:w-48 mb-10 md:mb-0 mt-10 md:mt-20 object-contain'
+              className='w-64 md:w-64 lg:w-72 mb-10 md:mb-0 mt-10 md:mt-20 object-contain'
             />
           </Box>
         </Flex>
