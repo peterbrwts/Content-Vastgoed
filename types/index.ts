@@ -115,6 +115,15 @@ export type CaseStudyPagePayload = {
   metaKeywords: string
 }
 
+export type AanbodPayload = {
+  _id: string
+  heading: string
+  subheading:string
+  metaTitle: string
+  metaDescription: string
+  metaKeywords: string
+}
+
 export type TermsPagePayload = {
   _id: string
   heading: string

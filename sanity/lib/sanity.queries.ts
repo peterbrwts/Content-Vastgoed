@@ -31,6 +31,15 @@ export const caseStudyPageQuery = groq`*[_type == 'caseStudyPage'][0]{
   metaKeywords,
 }`
 
+export const aanbodPageQuery = groq`*[_type == 'aanbodPage'][0]{
+  _id,
+  heading,
+  subheading,
+  metaTitle,
+  metaDescription,
+  metaKeywords,
+}`
+
 export const contactPageQuery = groq`*[_type == 'contactPage'][0]{
   _id,
   heading,

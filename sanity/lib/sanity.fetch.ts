@@ -9,7 +9,8 @@ import {
   allPostsQuery, 
   blogPageQuery, 
   caseStudyBySlugQuery, 
-  caseStudyPageQuery, 
+  caseStudyPageQuery,
+  aanbodPageQuery,
   contactPageQuery, 
   homePageQuery, 
   latestCaseStudiesQuery, 
@@ -26,6 +27,7 @@ import {
   BlogPagePayload, 
   CaseStudy, 
   CaseStudyPagePayload, 
+  AanbodPayload,
   ContactPagePayload, 
   HomePagePayload, 
   Post, 
@@ -34,6 +36,7 @@ import {
   SettingsPayload, 
   TermsPagePayload 
 } from '@/types';
+
 
 export async function sanityFetch<QueryResponse>({ 
   query, 
@@ -74,6 +77,13 @@ export async function getCaseStudyPage() {
   return sanityFetch<CaseStudyPagePayload>({
     query: caseStudyPageQuery,
     tags: ['caseStudyPage']
+  })
+}
+
+export async function getAanbodPage() {
+  return sanityFetch<AanbodPayload>({
+    query: aanbodPageQuery,
+    tags: ['aanbodPage']
   })
 }
 

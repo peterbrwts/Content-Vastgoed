@@ -6,6 +6,7 @@ import { ContactItem } from "./contact";
 import { PrivacyItem } from "./privacy";
 import { TermsItem } from "./terms";
 import { HomeItems } from "./home";
+import { AanbodItem } from "./aanbod";
 
 export const PagesItem = (S: StructureBuilder) =>
   S.listItem()
@@ -17,6 +18,7 @@ export const PagesItem = (S: StructureBuilder) =>
         .items([
           HomeItems(S),
           S.divider(),
+          AanbodItem(S),
           BlogItem(S),
           CaseStudiesItem(S),
           ContactItem(S),

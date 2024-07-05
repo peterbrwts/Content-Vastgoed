@@ -54,6 +54,19 @@ export default defineType({
       group: 'content',
       fieldset: 'content'
     }),
+    defineField({
+      name: "featuredPandenTekoop",
+      title: "Panden te koop in de kijker",
+      type: "array",
+      group: 'content',
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "aanbod" }],
+        },
+      ],
+      validation: (Rule) => Rule.unique(),
+    }),
     ...seoFields,
   ]
 })

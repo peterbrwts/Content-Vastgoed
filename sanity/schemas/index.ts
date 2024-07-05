@@ -4,6 +4,7 @@ import postCategory from "./documents/post-category";
 import author from "./documents/author";
 import menuItem from "./documents/menu-item";
 import caseStudy from "./documents/case-study";
+import aanbod from './documents/aanbod';
 
 const coreSchema = [
   settings,
@@ -12,10 +13,12 @@ const coreSchema = [
   author,
   menuItem,
   caseStudy,
+  aanbod,
 ]
 
 // pages schema 
 import homePage from "./singletons/home-page";
+import aanbodPage from "./singletons/aanbod-page";
 import blogPage from "./singletons/blog-page";
 import caseStudyPage from "./singletons/case-study-page";
 import contactPage from "./singletons/contact-page";
@@ -24,6 +27,7 @@ import termsPage from "./singletons/terms-page";
 
 const pagesSchema = [
   homePage,
+  aanbodPage,
   blogPage,
   caseStudyPage,
   contactPage,
