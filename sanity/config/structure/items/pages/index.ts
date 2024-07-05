@@ -5,6 +5,7 @@ import { CaseStudiesItem } from "./case-studies";
 import { ContactItem } from "./contact";
 import { PrivacyItem } from "./privacy";
 import { TermsItem } from "./terms";
+import { HomeItems } from "./home";
 
 export const PagesItem = (S: StructureBuilder) =>
   S.listItem()
@@ -14,11 +15,14 @@ export const PagesItem = (S: StructureBuilder) =>
       S.list()
         .title('Pages')
         .items([
+          HomeItems(S),
+          S.divider(),
           BlogItem(S),
           CaseStudiesItem(S),
           ContactItem(S),
           S.divider(),
           PrivacyItem(S),
-          TermsItem(S)
+          TermsItem(S),
+          S.divider(),
         ])
     )
