@@ -1,13 +1,13 @@
 "use client"
-import { CaseStudy } from "@/types";
+import { Aanbod } from "@/types";
 import Grid from "@/components/shared/ui/grid";
 import Section from "@/components/shared/ui/section";
 import Container from '@/components/global/container';
 import { motion, useScroll, useTransform } from "framer-motion";
-import CaseStudyCard from '@/components/shared/case-study-card';
+import AanbodCard from '@/components/shared/aanbod-card';
 
-export default function HomeCaseStudies({ caseStudies }: {
-  caseStudies: CaseStudy[]
+export default function HomeCaseStudies({ aanbod }: {
+  aanbod: Aanbod[]
 }) {
 
   const { scrollYProgress } = useScroll();
@@ -23,9 +23,9 @@ export default function HomeCaseStudies({ caseStudies }: {
           Ontdek de nieuwste panden te koop bij Guy Content
         </motion.div>
         <Grid className='lg:grid-cols-3 gap-8 md:gap-14 lg:gap-6 w-full'>
-          {caseStudies?.map((item) => (
+          {aanbod?.map((item) => (
             <li key={item._id}>
-              <CaseStudyCard caseStudy={item} />
+              <AanbodCard aanbod={item} />
             </li>
           ))}
         </Grid>

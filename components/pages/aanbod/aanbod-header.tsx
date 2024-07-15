@@ -1,22 +1,22 @@
-import { CaseStudy } from '@/types'
+import { Aanbod } from '@/types'
 import Tag from '@/components/shared/tag'
 import Flex from '@/components/shared/ui/flex'
 import Button from '@/components/shared/button'
 import Header from '@/components/shared/ui/header'
 import Container from '@/components/global/container'
 
-export default function CaseStudyHeader({ caseStudy }: {
-  caseStudy: CaseStudy
+export default function AanbodHeader({ aanbod }: {
+  aanbod: Aanbod
 }) {
 
-  const { title, shortDescription, url } = caseStudy
+  const { title, shortDescription, location, type} = aanbod
 
   return (
     <Header className='mt-20 mb-20 -ml-1'>
       <Container>
         <Flex className='flex-col md:flex-row items-start md:items-end justify-between w-full'>
           <Flex className='flex-col items-start'>
-            <Tag text="Case Study" />
+            <Tag text={type} />
             <Title>
               {title}
             </Title>
@@ -24,13 +24,13 @@ export default function CaseStudyHeader({ caseStudy }: {
               {shortDescription}
             </Description>
           </Flex>
-          <Button
+          {/* <Button
             href={`${url}`}
             variant="outline"
             size="large"
           >
             View Project
-          </Button>
+          </Button> */}
         </Flex>
       </Container>
     </Header>

@@ -3,10 +3,10 @@ import { StructureBuilder } from "sanity/structure";
 
 export const AanbodItem = (S: StructureBuilder) =>
   S.listItem()
-    .title("Aanbod")
+    .title("Aanbod panden")
     .icon(FiBriefcase)
     .child(
       S.documentList()
-        .title('Aanbod')
+        .title('Aanbod panden')
         .filter('_type == "aanbod"')
       )

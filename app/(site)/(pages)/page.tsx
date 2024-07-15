@@ -3,7 +3,7 @@ import { draftMode } from "next/headers";
 
 import { 
   getHomePage, 
-  getLatestCaseStudies, 
+  getLatestAanbod, 
   getLatestPosts 
 } from '@/sanity/lib/sanity.fetch'
 
@@ -30,21 +30,21 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
 
   const pageData = await getHomePage()
-  const caseStudiesData = await getLatestCaseStudies()
+  const aanbodData = await getLatestAanbod()
   const postsData = await getLatestPosts()
 
   const [ 
     page, 
-    caseStudies, 
+    aanbod, 
     posts 
-  ] = await Promise.all([pageData, caseStudiesData, postsData])
+  ] = await Promise.all([pageData, aanbodData, postsData])
 
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && process.env.SANITY_API_READ_TOKEN) {
     return (
       <PreviewProvider token={process.env.SANITY_API_READ_TOKEN}>
-        <HomePreview page={page} caseStudies={caseStudies} posts={posts} />
+        <HomePreview page={page} aanbod={aanbod} posts={posts} />
       </PreviewProvider>
     )
   }
@@ -58,8 +58,8 @@ export default async function Home() {
         btnText={page.btnText}
         btnDestination={page.btnDestination}
       />
-      <HomeCaseStudies caseStudies={caseStudies} />
-      <HomeLatestPosts posts={posts} />
+      <HomeCaseStudies aanbod={aanbod} />
+      {/* <HomeLatestPosts posts={posts} /> */}
     </>
   )
 }

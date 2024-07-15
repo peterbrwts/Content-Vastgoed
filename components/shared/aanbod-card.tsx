@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { CaseStudy } from '@/types'
+import { Aanbod } from '@/types'
 import { FiArrowUpRight } from 'react-icons/fi'
 
-interface CaseStudyCardProps {
-  caseStudy: CaseStudy
+interface AanbodCardProps {
+  aanbod: Aanbod
 }
 
-export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
+export default function AanbodCard({ aanbod }: AanbodCardProps) {
 
-  const { title, slug, image } = caseStudy
+  const { title, slug, image } = aanbod
 
   return (
     <article 
@@ -17,7 +17,7 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       className='w-full h-full relative rounded-lg cursor-pointer overflow-hidden group'
     >
       <Link 
-        href={`/case-studies/${slug}`}
+        href={`/aanbod/${slug}`}
       >
         <Image 
           src={image}

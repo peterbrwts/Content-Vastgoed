@@ -3,8 +3,7 @@ import post from "./documents/post";
 import postCategory from "./documents/post-category";
 import author from "./documents/author";
 import menuItem from "./documents/menu-item";
-import caseStudy from "./documents/case-study";
-import aanbod from './documents/aanbod';
+import aanbod from "./documents/aanbod";
 
 const coreSchema = [
   settings,
@@ -12,7 +11,6 @@ const coreSchema = [
   postCategory,
   author,
   menuItem,
-  caseStudy,
   aanbod,
 ]
 
@@ -20,7 +18,6 @@ const coreSchema = [
 import homePage from "./singletons/home-page";
 import aanbodPage from "./singletons/aanbod-page";
 import blogPage from "./singletons/blog-page";
-import caseStudyPage from "./singletons/case-study-page";
 import contactPage from "./singletons/contact-page";
 import privacyPage from "./singletons/privacy-page";
 import termsPage from "./singletons/terms-page";
@@ -29,7 +26,6 @@ const pagesSchema = [
   homePage,
   aanbodPage,
   blogPage,
-  caseStudyPage,
   contactPage,
   privacyPage,
   termsPage

@@ -1,46 +1,46 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getCaseStudyBySlug } from '@/sanity/lib/sanity.fetch'
+import { getAanbodBySlug } from '@/sanity/lib/sanity.fetch'
 import { generateStaticSlugs } from "@/utils/generate-static-slugs";
 
 // components
-import CaseStudy from '@/components/pages/case-studies/case-study'
-import CaseStudyPreview from '@/components/preview/case-study-preview';
+import Aanbod from '@/components/pages/aanbod/aanbod'
+import AanbodPreview from '@/components/preview/aanbod-preview';
 import PreviewProvider from "@/components/preview/preview-provider";
 
-interface CaseStudyPageProps {
+interface AanbodPageProps {
   params: { slug: string }
 }
 
-export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: AanbodPageProps): Promise<Metadata> {
 
-  const caseStudy = await getCaseStudyBySlug(params.slug)
+  const aanbod = await getAanbodBySlug(params.slug)
 
   return {
-    title: caseStudy.metaTitle,
-    description: caseStudy.metaDescription,
-    keywords: caseStudy.metaKeywords,
+    title: aanbod.metaTitle,
+    description: aanbod.metaDescription,
+    keywords: aanbod.metaKeywords,
   }
 }
 
 export async function generateStaticParams() {
-  return generateStaticSlugs('caseStudy');
+  return generateStaticSlugs('test');
 }
 
-export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+export default async function AanbodPage({ params }: AanbodPageProps) {
 
-  const caseStudy = await getCaseStudyBySlug(params.slug)
+  const aanbod = await getAanbodBySlug(params.slug)
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && process.env.SANITY_API_READ_TOKEN) {
     return (
       <PreviewProvider token={process.env.SANITY_API_READ_TOKEN}>
-        <CaseStudyPreview caseStudy={caseStudy} />
+        <AanbodPreview aanbod={aanbod} />
       </PreviewProvider>
     );
   }
 
   return (
-    <CaseStudy caseStudy={caseStudy} />
+    <Aanbod aanbod={aanbod} />
   )
 }

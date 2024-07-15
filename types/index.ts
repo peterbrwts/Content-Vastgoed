@@ -26,20 +26,41 @@ export type Post = {
   metaKeywords: string
 }
 
-export type CaseStudyGalleryImage = {
+export type AanbodGalleryImage = {
   url: string
   alt: string
 }
 
-export type CaseStudy = {
+export type Aanbod = {
   _id: string
   title: string
   slug: string
   image: string
+  typePand: string;
+  location: string;
+  price: number;
   shortDescription: string
-  url: string
   overview: PortableTextBlock
-  imageGallery: CaseStudyGalleryImage[]
+  imageGallery: AanbodGalleryImage[]
+  type: string;
+  bedroom: number;
+  livingSurface: number;
+  surface:number;
+  terraceSurface:number;
+  year: string;
+  condition: string;
+  parking: string;
+  epc: string;  
+  water:string;
+  flood:string;
+  easement:string;
+  urbanism: object;
+  permit: string;
+  preemption: string;
+  judicial: string;
+  subdivision: string;
+  destination: string;
+  reference: string;
   metaTitle: string
   metaDescription: string
   metaKeywords: string
@@ -107,13 +128,6 @@ export type BlogPagePayload = {
   metaKeywords: string
 }
 
-export type CaseStudyPagePayload = {
-  _id: string
-  heading: string
-  metaTitle: string
-  metaDescription: string
-  metaKeywords: string
-}
 
 export type AanbodPayload = {
   _id: string

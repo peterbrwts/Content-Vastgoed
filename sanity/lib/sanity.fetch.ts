@@ -4,16 +4,16 @@ import type { QueryParams } from '@sanity/client'
 import { client } from "../config/sanity.client";
 
 import { 
-  allCaseStudiesQuery, 
+  allAanbodQuery, 
   allPostCategoriesQuery, 
   allPostsQuery, 
   blogPageQuery, 
-  caseStudyBySlugQuery, 
+  caseAanbodSlugQuery, 
   caseStudyPageQuery,
   aanbodPageQuery,
   contactPageQuery, 
   homePageQuery, 
-  latestCaseStudiesQuery, 
+  latestAanbodQuery, 
   latestPostsQuery, 
   postBySlugQuery, 
   postCategoryBySlugQuery, 
@@ -25,8 +25,7 @@ import {
 
 import { 
   BlogPagePayload, 
-  CaseStudy, 
-  CaseStudyPagePayload, 
+  Aanbod, 
   AanbodPayload,
   ContactPagePayload, 
   HomePagePayload, 
@@ -73,12 +72,6 @@ export async function getBlogPage() {
   })
 }
 
-export async function getCaseStudyPage() {
-  return sanityFetch<CaseStudyPagePayload>({
-    query: caseStudyPageQuery,
-    tags: ['caseStudyPage']
-  })
-}
 
 export async function getAanbodPage() {
   return sanityFetch<AanbodPayload>({
@@ -153,24 +146,24 @@ export async function getPostCategoryBySlug(slug: string) {
   })
 }
 
-export async function getLatestCaseStudies() {
-  return sanityFetch<CaseStudy[]>({
-    query: latestCaseStudiesQuery,
-    tags: ['caseStudy']
+export async function getLatestAanbod() {
+  return sanityFetch<Aanbod[]>({
+    query: latestAanbodQuery,
+    tags: ['aanbod']
   })
 }
 
-export async function getAllCaseStudies() {
-  return sanityFetch<CaseStudy[]>({
-    query: allCaseStudiesQuery,
-    tags: ['caseStudy']
+export async function getAllAanbod() {
+  return sanityFetch<Aanbod[]>({
+    query: allAanbodQuery,
+    tags: ['aanbod']
   })
 }
 
-export async function getCaseStudyBySlug(slug: string) {
-  return sanityFetch<CaseStudy>({
-    query: caseStudyBySlugQuery,
+export async function getAanbodBySlug(slug: string) {
+  return sanityFetch<Aanbod>({
+    query: caseAanbodSlugQuery,
     params: { slug: slug },
-    tags: ['caseStudy'],
+    tags: ['aanbod'],
   })
 }

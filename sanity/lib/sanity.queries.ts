@@ -23,7 +23,7 @@ export const blogPageQuery = groq`*[_type == 'blogPage'][0]{
   metaKeywords,
 }`
 
-export const caseStudyPageQuery = groq`*[_type == 'caseStudyPage'][0]{
+export const caseStudyPageQuery = groq`*[_type == 'aanbodPage'][0]{
   _id,
   heading,
   metaTitle,
@@ -158,7 +158,7 @@ export const postCategoryBySlugQuery = groq`*[_type == 'postCategory' && slug.cu
   'slug': slug.current,
 }`
 
-export const latestCaseStudiesQuery = groq`*[_type == 'caseStudy'][0...3] | order(_createdAt desc) {
+export const latestAanbodQuery = groq`*[_type == 'aanbod'][0...3] | order(_createdAt desc) {
   _id,
   title,
   'slug': slug.current,
@@ -166,17 +166,20 @@ export const latestCaseStudiesQuery = groq`*[_type == 'caseStudy'][0...3] | orde
   'image': image.asset->url,
 }`
  
- export const allCaseStudiesQuery = groq`*[_type == 'caseStudy'] | order(_createdAt desc) {
+ export const allAanbodQuery = groq`*[_type == 'aanbod'] | order(_createdAt desc) {
   _id,
   title,
+  location,
   'slug': slug.current,
   url,
   'image': image.asset->url,
 }`
 
-export const caseStudyBySlugQuery = groq`*[_type == 'caseStudy' && slug.current == $slug][0]{
+export const caseAanbodSlugQuery = groq`*[_type == 'aanbod' && slug.current == $slug][0]{
   _id,
   title,
+  location,
+  type,
   shortDescription,
   overview,
   'slug': slug.current,
@@ -191,7 +194,7 @@ export const caseStudyBySlugQuery = groq`*[_type == 'caseStudy' && slug.current 
   metaKeywords,
 }`
 
-export const caseStudyPathsQuery = groq`*[_type == "caseStudy" && defined(slug.current)][]{
+export const caseStudyPathsQuery = groq`*[_type == "aanbod" && defined(slug.current)][]{
   'params': { 'slug': slug.current }
 }`;
 

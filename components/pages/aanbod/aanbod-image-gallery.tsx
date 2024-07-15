@@ -1,14 +1,14 @@
 import Image from 'next/image'
-import { CaseStudy } from '@/types'
+import { Aanbod } from '@/types'
 import Grid from '@/components/shared/ui/grid'
 import Section from '@/components/shared/ui/section'
 import Container from '@/components/global/container'
 
-export default function CaseStudyImageGallery({ caseStudy }: {
-  caseStudy: CaseStudy
+export default function AanbodImageGallery({ aanbod }: {
+  aanbod: Aanbod
 }) {
 
-  const { imageGallery: images } = caseStudy
+  const { imageGallery: images } = aanbod
 
   return (
     <Section className='my-16 md:my-32'>
