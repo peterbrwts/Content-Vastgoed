@@ -108,6 +108,13 @@ export interface SettingsPayload {
   footerFootnoteLink: string
 }
 
+export interface Section {
+  title: string;
+  description: string;
+  image: string;
+  showOnLeft?: boolean;
+}
+
 export type HomePagePayload = {
   _id: string
   heading: string
@@ -115,6 +122,7 @@ export type HomePagePayload = {
   image: string
   btnText: string
   btnDestination: string
+  sections: Section[]
   metaTitle: string
   metaDescription: string
   metaKeywords: string

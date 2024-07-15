@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
+import { SectionComponent } from "@/components/shared/ui/sections";
 
 import { 
   getHomePage, 
@@ -59,6 +60,14 @@ export default async function Home() {
         btnDestination={page.btnDestination}
       />
       <HomeCaseStudies aanbod={aanbod} />
+      <div>
+      {page?.sections.map((section) => (
+        <div key={section.title}>
+          <SectionComponent section={section} />
+          
+        </div>
+      ))}
+      </div>
       {/* <HomeLatestPosts posts={posts} /> */}
     </>
   )

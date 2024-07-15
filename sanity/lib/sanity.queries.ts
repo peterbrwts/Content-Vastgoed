@@ -10,6 +10,12 @@ export const homePageQuery = groq`*[_type == 'homePage'][0]{
   'image': image.asset->url,
   btnText,
   btnDestination,
+   sections[]{
+          title,
+          description,
+          "image": image.asset->url,
+          showOnLeft
+        },
   metaTitle,
   metaDescription,
   metaKeywords,
