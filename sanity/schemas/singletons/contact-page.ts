@@ -21,6 +21,13 @@ export default defineType({
       group: 'content',
       fieldset: 'content'
     }),
+    defineField({
+      name: 'subheading',
+      title: 'SubHeading',
+      type: 'string',
+      group: 'content',
+      fieldset: 'content'
+    }),
     ...seoFields,
   ]
 })

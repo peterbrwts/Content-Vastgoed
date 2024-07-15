@@ -159,6 +159,7 @@ export type PrivacyPagePayload = {
 export type ContactPagePayload = {
   _id: string
   heading: string
+  subheading:string
   metaTitle: string
   metaDescription: string
   metaKeywords: string

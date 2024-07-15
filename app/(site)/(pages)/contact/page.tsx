@@ -23,7 +23,7 @@ export default async function ContactPage() {
   return (
     <>
       <Header 
-        heading={page.heading} 
+        heading={page.heading} subheading={page.subheading}
         centerText={true}
       />
       <Container>

@@ -21,7 +21,7 @@ export default async function PrivacyPage() {
   
   return (
     <>
-      <Header heading={page.heading} />
+      <Header heading={page.heading} subheading='test'/>
       <Container>
         <div className='mx-auto md:pt-6 pb-10 px-6 md:px-0 text-lg text-gray-700 blog-content'>
           <Content data={page.content} />

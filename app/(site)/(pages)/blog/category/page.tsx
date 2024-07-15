@@ -16,7 +16,7 @@ export default async function BlogCategoryPage() {
 
   return (
     <> 
-      <Header heading="Blog Categories" />
+      <Header heading="Blog Categories" subheading='test'/>
       <Container className='my-8 md:my-16 grid md:grid-cols-3 gap-8'>
         {categories.map((category: PostCategory) => (
           <CategoryCard 
