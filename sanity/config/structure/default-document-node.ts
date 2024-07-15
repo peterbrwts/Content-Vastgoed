@@ -18,6 +18,20 @@ export const defaultDocumentNode = (S: any, props: any) => {
     ])
   }
 
+  if (schemaType === "aanbod") {
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(Iframe)
+        .options({
+          url: (doc: any) => doc?.slug?.current 
+          ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/preview?page=aanbod/${doc.slug.current}`
+          : `${process.env.NEXT_PUBLIC_SITE_URL}/api/preview`,
+        })
+        .title('Preview Aanbod'),
+    ])
+  }
+
   if (schemaType === "caseStudy") {
     return S.document().views([
       S.view.form(),
