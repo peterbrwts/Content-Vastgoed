@@ -45,11 +45,11 @@ export default function HomeHero({ ...props }: {
           <Box>
             <Image 
               src={image}
-              width={450}
-              height={550}
-              sizes="(max-width: 100px) 2000px"
-              alt='Image of Brooke'
-              className='w-64 md:w-64 lg:w-72 mb-10 md:mb-0 mt-10 md:mt-20 object-contain'
+              width={800}
+              height={800}
+              sizes="(max-width: 1000px) 2000px"
+              alt='Guy Content'
+              className='mb-10 md:mb-0 mt-10 md:mt-20 object-contain'
             />
           </Box>
         </Flex>
@@ -62,7 +62,7 @@ function Heading({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <h1 className='-ml-1 md:-ml-2 text-[12vw] font-light leading-none'>
+    <h1 className='-ml-1 md:-ml-2 text-[12vw] font-semibold leading-none'>
       {children}
     </h1>
   )
