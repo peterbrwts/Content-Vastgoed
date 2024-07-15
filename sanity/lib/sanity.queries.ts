@@ -49,7 +49,7 @@ export const aanbodPageQuery = groq`*[_type == 'aanbodPage'][0]{
 export const contactPageQuery = groq`*[_type == 'contactPage'][0]{
   _id,
   heading,
-  subheading
+  subheading,
   metaTitle,
   metaDescription,
   metaKeywords,
