@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: AanbodPageProps): Promise<Met
 }
 
 export async function generateStaticParams() {
-  return generateStaticSlugs('test');
+  return generateStaticSlugs('aanbod');
 }
 
 export default async function AanbodPage({ params }: AanbodPageProps) {

@@ -9,16 +9,17 @@ interface AanbodCardProps {
 
 export default function AanbodCard({ aanbod }: AanbodCardProps) {
 
-  const { title, slug, image } = aanbod
+  const { title, slug, image, location, bedroom, surface } = aanbod
 
   return (
     <article 
       key={title} 
-      className='w-full h-full relative rounded-lg cursor-pointer overflow-hidden group'
+      className='max-w-6xl mx-auto px-6 mt-10 mb-10'
     >
       <Link 
         href={`/aanbod/${slug}`}
       >
+        <div className='relative group text-white w-full h-[408px] mb-0 overflow-hidden rounded-sm'>
         <Image 
           src={image}
           width={580}
@@ -27,16 +28,22 @@ export default function AanbodCard({ aanbod }: AanbodCardProps) {
           alt={title}
           className='w-full h-full object-cover transition md:hover:scale-[1.02] '
         />
-        <div className='p-[1rem] absolute bottom-0 left-0 right-0 transition-all md:group-hover:p-[2rem]'>
-          <div className='flex items-center justify-between py-2 md:py-3 px-4 md:px-5 text-base md:text-lg tracking-widest cursor-pointer group rounded-md bg-[#f6f6f2] text-black'>
-            {title} 
-            <FiArrowUpRight 
-              size={20}
-              className='ml-8 md:ml-12 transition group-hover:rotate-45 text-black'
-            />
+        
+        <div className='p-[1rem] absolute bottom-0 left-0 right-0 '>
+          <div className='flex items-center justify-between py-2 md:py-3 px-4 md:px-5 text-sm font-semibold   cursor-pointer group rounded-md bg-[#f6f6f2] text-black'>
+            <h2>{title} {location}</h2>
           </div>
+          <div className='pt-2 text-white'>
+        <p>Slaapkamers: {bedroom}</p>
+        <p>Oppervlakte: {surface}m²</p>
+      </div>
         </div>
+        
+        </div>
+      
+       
       </Link>
+      
     </article>
   )
 }

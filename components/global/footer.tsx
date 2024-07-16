@@ -21,6 +21,21 @@ export default function Footer(props: FooterProps) {
             <p className='mt-4'>
               {settings.footerTagline}
             </p>
+            <div className="my-4 flex flex-col gap-y-0">
+            <p className="font-bold">Contact:</p>
+            <a href="mailto:info@guycontent.be">
+            info@guycontent.be
+            </a>
+            <a href="tel:0032495624471"> +32 495 62 44 71</a>
+          </div>
+          <div className="mb-4">
+            <p className="font-bold">Adres:</p>
+            <p>
+              Guy Content <br />
+              Waterloostraat 2 <br />
+              8301 Knokke-Heist
+            </p>
+          </div>
             {settings.enableSubscribeForm && (
               <SubscribeForm 
                 title={settings.subscribeFormTitle} 

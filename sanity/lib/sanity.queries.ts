@@ -180,6 +180,9 @@ export const latestAanbodQuery = groq`*[_type == 'aanbod'][0...3] | order(_creat
   'slug': slug.current,
   url,
   'image': image.asset->url,
+  bedroom,
+  type,
+  surface
 }`
 
 export const caseAanbodSlugQuery = groq`*[_type == 'aanbod' && slug.current == $slug][0]{
