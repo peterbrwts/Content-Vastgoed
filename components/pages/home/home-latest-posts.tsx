@@ -14,7 +14,7 @@ export default function HomeLatestPosts({ posts }: {
     <Section className='mt-6 md:mt-0 mb-4 py-10 md:py-16 border-t md-border-t-none border-b bg-white'>
       <Container>
         <Heading>
-          Latest Posts
+          Laatste artikels
         </Heading>
         <hr className='mt-8'/>
         <Grid className='grid-cols-1 lg:grid-cols-3 gap-12 mt-12'>
@@ -30,7 +30,7 @@ export default function HomeLatestPosts({ posts }: {
             variant="default"
             size="default"
           >
-            View All Posts
+            Meer artikels
           </Button>
         </Flex>
       </Container>

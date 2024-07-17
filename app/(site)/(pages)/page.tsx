@@ -16,6 +16,7 @@ import HomeLatestPosts from '@/components/pages/home/home-latest-posts'
 // preview components
 import PreviewProvider from "@/components/preview/preview-provider"
 import HomePreview from "@/components/preview/home-preview"
+import Cta from "@/components/shared/cta";
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -64,10 +65,11 @@ export default async function Home() {
       {page?.sections.map((section) => (
         <div key={section.title}>
           <SectionComponent section={section} />
-          
         </div>
       ))}
       </div>
+      <Cta />
+      <HomeLatestPosts posts={posts} />
       {/* <HomeLatestPosts posts={posts} /> */}
     </>
   )

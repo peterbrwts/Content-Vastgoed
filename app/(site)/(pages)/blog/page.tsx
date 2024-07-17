@@ -9,6 +9,7 @@ import {
 import PostArchive from '@/components/pages/blog/post-archive'
 import BlogCategories from '@/components/pages/blog/blog-categories'
 import BlogArchiveHeader from '@/components/pages/blog/blog-archive-header'
+import Cta from '@/components/shared/cta'
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -33,6 +34,7 @@ export default async function BlogPage() {
         <BlogCategories categories={categories} />
       </BlogArchiveHeader>
       <PostArchive posts={posts} />
+      <Cta />
     </>
   )
 }

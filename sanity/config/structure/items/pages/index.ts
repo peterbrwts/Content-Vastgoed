@@ -20,6 +20,7 @@ export const PagesItem = (S: StructureBuilder) =>
           HomeItems(S),
           S.divider(),
           AanbodItem(S),
+          BlogItem(S),
           OverItem(S),
           ContactItem(S),
           S.divider(),

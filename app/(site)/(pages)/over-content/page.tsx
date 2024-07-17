@@ -4,6 +4,7 @@ import Container from '@/components/global/container'
 import Content from '@/components/shared/content'
 import Header from '@/components/shared/header'
 import { SectionComponent } from '@/components/shared/ui/sections'
+import Cta from '@/components/shared/cta'
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -36,6 +37,7 @@ export default async function OverPage() {
       </div>
         </div>
       </Container>
+      <Cta />
     </>
   )
 }

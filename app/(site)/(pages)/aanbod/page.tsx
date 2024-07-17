@@ -4,6 +4,7 @@ import { getAllAanbod, getAanbodPage } from '@/sanity/lib/sanity.fetch'
 //components
 import AanbodArchive from '@/components/pages/aanbod/aanbod-archive'
 import Header from '@/components/shared/header'
+import Cta from '@/components/shared/cta'
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -25,6 +26,7 @@ export default async function AanbodPage() {
     <>
       <Header heading={page.heading} subheading={page.subheading}/>
       <AanbodArchive aanbod={aanbod} />
+      <Cta />
     </>
   )
 }

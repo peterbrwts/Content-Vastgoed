@@ -24,7 +24,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <body className={`${inter.className}`}>
         <ClientLayout settings={settings}>
           {children}
-          <Cta />
         </ClientLayout>
         
       </body>
