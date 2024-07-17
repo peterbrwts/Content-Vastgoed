@@ -25,6 +25,7 @@ import termsPage from "./singletons/terms-page";
 const pagesSchema = [
   homePage,
   aanbodPage,
+  overPage,
   blogPage,
   contactPage,
   privacyPage,
@@ -34,6 +35,7 @@ const pagesSchema = [
 // post builder schema
 import postQuoteBlock from "./objects/portable-text/post-quote-block";
 import postImageBlock from "./objects/portable-text/post-image-block";
+import overPage from "./singletons/over-page";
 
 const postBuilderSchema = [
   postImageBlock,

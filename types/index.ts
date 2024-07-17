@@ -146,6 +146,15 @@ export type AanbodPayload = {
   metaKeywords: string
 }
 
+export type OverPagePayload = {
+  _id: string
+  heading: string
+  content: PortableTextBlock
+  metaTitle: string
+  metaDescription: string
+  metaKeywords: string
+}
+
 export type TermsPagePayload = {
   _id: string
   heading: string

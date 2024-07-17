@@ -11,6 +11,7 @@ import {
   caseAanbodSlugQuery, 
   caseStudyPageQuery,
   aanbodPageQuery,
+  OverPageQuery,
   contactPageQuery, 
   homePageQuery, 
   latestAanbodQuery, 
@@ -27,6 +28,7 @@ import {
   BlogPagePayload, 
   Aanbod, 
   AanbodPayload,
+  OverPagePayload,
   ContactPagePayload, 
   HomePagePayload, 
   Post, 
@@ -69,6 +71,13 @@ export async function getBlogPage() {
   return sanityFetch<BlogPagePayload>({
     query: blogPageQuery,
     tags: ['blogPage']
+  })
+}
+
+export async function getOverPage() {
+  return sanityFetch<OverPagePayload>({
+    query: OverPageQuery,
+    tags: ['overPage']
   })
 }
 

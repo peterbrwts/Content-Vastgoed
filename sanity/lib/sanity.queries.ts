@@ -46,6 +46,16 @@ export const aanbodPageQuery = groq`*[_type == 'aanbodPage'][0]{
   metaKeywords,
 }`
 
+export const OverPageQuery = groq`*[_type == 'overPage'][0]{
+  _id,
+  heading,
+  subheading,
+  metaTitle,
+  content,
+  metaDescription,
+  metaKeywords,
+}`
+
 export const contactPageQuery = groq`*[_type == 'contactPage'][0]{
   _id,
   heading,
