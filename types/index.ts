@@ -150,6 +150,7 @@ export type OverPagePayload = {
   _id: string
   heading: string
   content: PortableTextBlock
+  sections: Section[]
   metaTitle: string
   metaDescription: string
   metaKeywords: string

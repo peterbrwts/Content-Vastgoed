@@ -3,6 +3,7 @@ import { getOverPage } from '@/sanity/lib/sanity.fetch'
 import Container from '@/components/global/container'
 import Content from '@/components/shared/content'
 import Header from '@/components/shared/header'
+import { SectionComponent } from '@/components/shared/ui/sections'
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -25,6 +26,14 @@ export default async function OverPage() {
       <Container>
         <div className='mx-auto md:pt-6 pb-10 px-6 md:px-0 text-lg text-gray-700 blog-content'>
           <Content data={page.content} />
+          <div>
+      {page?.sections.map((section) => (
+        <div key={section.title}>
+          <SectionComponent section={section} />
+          
+        </div>
+      ))}
+      </div>
         </div>
       </Container>
     </>

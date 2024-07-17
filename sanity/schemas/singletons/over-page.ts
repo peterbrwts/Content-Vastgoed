@@ -29,6 +29,40 @@ export default defineType({
         { type: 'block' },
       ]
     }),
+    defineField({
+      name: "sections",
+      title: "Sections",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          title: "Section",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string",
+            }),
+            defineField({
+              name: "description",
+              title: "Description",
+              type: "text",
+            }),
+            defineField({
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: { hotspot: true },
+            }),
+            defineField({
+              name: "showOnLeft",
+              title: "Show On Left",
+              type: "boolean",
+            }),
+          ],
+        },
+      ],
+    }),
     ...seoFields
   ]
 })

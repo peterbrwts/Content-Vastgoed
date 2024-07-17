@@ -52,6 +52,12 @@ export const OverPageQuery = groq`*[_type == 'overPage'][0]{
   subheading,
   metaTitle,
   content,
+   sections[]{
+          title,
+          description,
+          "image": image.asset->url,
+          showOnLeft
+        },
   metaDescription,
   metaKeywords,
 }`
