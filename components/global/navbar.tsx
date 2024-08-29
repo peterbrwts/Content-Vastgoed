@@ -13,9 +13,11 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <header 
-      className='z-50 hidden sticky top-0 md:flex backdrop-blur-sm items-center justify-between max-w-8xl mx-auto my-0 py-6 px-6 md:px-12 rounded-bl-xl rounded-br-xl border-b border-b-[#efeff1] bg-[#F6F6F1] bg-opacity-80'
+      className='z-50 hidden sticky top-0 md:flex backdrop-blur-sm items-center justify-between max-w-8xl mx-auto my-0 py-6 px-6 md:px-12 rounded-bl-xl rounded-br-xl border-b border-b-[#efeff1] bg-[#ffffff] bg-opacity-80'
     >
+      <div className='text-primary'>
       <Logo text={settings.logoText} />
+      </div>
       <nav>
         <ul className='hidden md:flex gap-12 items-center list-none'>
           {settings.navbarMenuItems.map(item => (
