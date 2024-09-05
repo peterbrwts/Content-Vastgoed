@@ -6,7 +6,7 @@ import { structure } from './sanity/config/structure';
 import {defaultDocumentNode} from '@/sanity/config/structure/default-document-node';
 import { apiVersion, dataset, projectId, studioUrl, useCdn } from './sanity/config/sanity.api';
 
-const title = 'Next.js, Sanity & Tailwind Theme'
+const title = 'Content Vastgoed'
 
 const config = defineConfig({
   title: title,
