@@ -6,8 +6,8 @@ import { defaultMetadata } from '@/utils/default-metadata';
 import ClientLayout from '@/components/global/client-layout';
 import Cta from '../components/shared/cta';
 
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+import { Jost } from 'next/font/google'
+const jost = Jost({ subsets: ['latin'] })
 
 export const metadata: Metadata = defaultMetadata
 
@@ -21,7 +21,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${jost.className}`}>
         <ClientLayout settings={settings}>
           {children}
         </ClientLayout>

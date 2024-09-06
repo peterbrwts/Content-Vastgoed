@@ -22,7 +22,7 @@ export default function HomeHero({ ...props }: {
   } = props
 
   return (
-    <Section className='md:mt-20'>
+    <Section className='pt-16 pb-16 bg-primary text-white'>
       <Container>
         <Flex className='flex flex-col-reverse md:flex-row justify-between'>
           <Box>

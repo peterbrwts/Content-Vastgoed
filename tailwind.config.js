@@ -8,11 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1d49a7",
-        secondary: "#1d49a7",
+        primary: "#143557",
+        secondary: "#E69973",
         tertiary: "#c0c0c0",
-        background: "#F5F5F5",
+        background: "#000000",
+        sand:"#E69973",
+        sandDark:"#e36c62"
       },
+      fontFamily: { 
+        "Jost": ['Jost', 'sans-serif'] 
+    },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
