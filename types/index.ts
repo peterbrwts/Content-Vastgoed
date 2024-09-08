@@ -26,12 +26,12 @@ export type Post = {
   metaKeywords: string
 }
 
-export type AanbodGalleryImage = {
+export type KopenGalleryImage = {
   url: string
   alt: string
 }
 
-export type Aanbod = {
+export type Kopen = {
   _id: string
   title: string
   slug: string
@@ -41,7 +41,7 @@ export type Aanbod = {
   price: number;
   shortDescription: string
   overview: PortableTextBlock
-  imageGallery: AanbodGalleryImage[]
+  imageGallery: KopenGalleryImage[]
   type: string;
   bedroom: number;
   livingSurface: number;
@@ -137,7 +137,7 @@ export type BlogPagePayload = {
 }
 
 
-export type AanbodPayload = {
+export type KopenPayload = {
   _id: string
   heading: string
   subheading:string

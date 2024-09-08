@@ -1,28 +1,28 @@
 import Image from 'next/image';
-import { Aanbod } from '@/types';
+import { Kopen } from '@/types';
 import Flex from '@/components/shared/ui/flex';
 import Content from '@/components/shared/content';
 import Container from '@/components/global/container';
 import Section from '@/components/shared/ui/section';
 
-export default function AanbodOverview({ aanbod }: {
-  aanbod: Aanbod
+export default function KopenOverview({ kopen }: {
+  kopen: Kopen
 }) {
   return (
     <Section>
       <Container>
         <Image 
-          src={aanbod.image}
+          src={kopen.image}
           width={2000}
           height={600}
-          alt={aanbod.title}
+          alt={kopen.title}
           className='h-[400px] md:h-[600px] object-cover rounded-xl'
         />
         <Flex className='flex-col justify-center relative max-w-4xl mx-auto mt-16 md:my-32'>
           <Heading>
             Omschrijving
           </Heading>
-          <Content data={aanbod.overview} />
+          <Content data={kopen.overview} />
         </Flex>
       </Container>
     </Section>

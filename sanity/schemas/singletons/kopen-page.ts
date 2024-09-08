@@ -4,8 +4,8 @@ import { fieldsets } from "../utils/fieldsets"
 import { seoFields } from "../utils/seo-fields"
 
 export default defineType({
-  name: 'aanbodPage',
-  title: 'Aanbod Page',
+  name: 'kopenPage',
+  title: 'Panden te koop',
   type: 'document',
   fieldsets: [
     ...fieldsets,

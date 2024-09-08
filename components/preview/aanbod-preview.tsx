@@ -3,9 +3,9 @@ import { useParams } from "next/navigation";
 import { useLiveQuery } from "@sanity/preview-kit";
 import { caseAanbodSlugQuery } from "@/sanity/lib/sanity.queries";
 
-import AanbodHeader from "../pages/aanbod/aanbod-header";
-import AanbodOverview from "../pages/aanbod/aanbod-overview";
-import AanbodImageGallery from "../pages/aanbod/aanbod-image-gallery";
+import AanbodHeader from "../pages/kopen/kopen-header";
+import AanbodOverview from "../pages/kopen/kopen-overview";
+import AanbodImageGallery from "../pages/kopen/kopen-image-gallery";
 import { Aanbod } from "@/types";
 
 interface AanbodPreviewProps {

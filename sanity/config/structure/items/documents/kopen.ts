@@ -1,12 +1,12 @@
 import { FiBriefcase } from "react-icons/fi";
 import { StructureBuilder } from "sanity/structure";
 
-export const AanbodItem = (S: StructureBuilder) =>
+export const KopenItem = (S: StructureBuilder) =>
   S.listItem()
-    .title("Aanbod panden")
+    .title("Panden te koop")
     .icon(FiBriefcase)
     .child(
       S.documentList()
         .title('Aanbod panden')
-        .filter('_type == "aanbod"')
+        .filter('_type == "kopen"')
       )

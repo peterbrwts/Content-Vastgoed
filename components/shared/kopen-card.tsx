@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Aanbod } from '@/types'
+import { Kopen } from '@/types'
 import { FiArrowUpRight } from 'react-icons/fi'
 
-interface AanbodCardProps {
-  aanbod: Aanbod
+interface KopenCardProps {
+  kopen: Kopen
 }
 
-export default function AanbodCard({ aanbod }: AanbodCardProps) {
+export default function KopenCard({ kopen }: KopenCardProps) {
 
-  const { title, slug, image, location, bedroom, surface } = aanbod
+  const { title, slug, image, location, bedroom, surface } = kopen
 
   return (
     <article 
@@ -17,7 +17,7 @@ export default function AanbodCard({ aanbod }: AanbodCardProps) {
       className='max-w-6xl mx-auto px-6 mt-10 mb-10'
     >
       <Link 
-        href={`/aanbod/${slug}`}
+        href={`/te-koop/${slug}`}
       >
         <div className='relative group text-white w-full h-[408px] mb-0 overflow-hidden rounded-sm'>
         <Image 

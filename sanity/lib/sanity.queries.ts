@@ -29,7 +29,7 @@ export const blogPageQuery = groq`*[_type == 'blogPage'][0]{
   metaKeywords,
 }`
 
-export const caseStudyPageQuery = groq`*[_type == 'aanbodPage'][0]{
+export const caseStudyPageQuery = groq`*[_type == 'kopenPage'][0]{
   _id,
   heading,
   metaTitle,
@@ -37,7 +37,7 @@ export const caseStudyPageQuery = groq`*[_type == 'aanbodPage'][0]{
   metaKeywords,
 }`
 
-export const aanbodPageQuery = groq`*[_type == 'aanbodPage'][0]{
+export const kopenPageQuery = groq`*[_type == 'kopenPage'][0]{
   _id,
   heading,
   subheading,
@@ -181,7 +181,7 @@ export const postCategoryBySlugQuery = groq`*[_type == 'postCategory' && slug.cu
   'slug': slug.current,
 }`
 
-export const latestAanbodQuery = groq`*[_type == 'aanbod'][0...3] | order(_createdAt desc) {
+export const latestKopenQuery = groq`*[_type == 'kopen'][0...3] | order(_createdAt desc) {
   _id,
   title,
   'slug': slug.current,
@@ -189,7 +189,7 @@ export const latestAanbodQuery = groq`*[_type == 'aanbod'][0...3] | order(_creat
   'image': image.asset->url,
 }`
  
- export const allAanbodQuery = groq`*[_type == 'aanbod'] | order(_createdAt desc) {
+ export const allKopenQuery = groq`*[_type == 'kopen'] | order(_createdAt desc) {
   _id,
   title,
   location,
@@ -201,7 +201,7 @@ export const latestAanbodQuery = groq`*[_type == 'aanbod'][0...3] | order(_creat
   surface
 }`
 
-export const caseAanbodSlugQuery = groq`*[_type == 'aanbod' && slug.current == $slug][0]{
+export const caseKopenSlugQuery = groq`*[_type == 'kopen' && slug.current == $slug][0]{
   _id,
   title,
   location,
@@ -220,7 +220,7 @@ export const caseAanbodSlugQuery = groq`*[_type == 'aanbod' && slug.current == $
   metaKeywords,
 }`
 
-export const caseStudyPathsQuery = groq`*[_type == "aanbod" && defined(slug.current)][]{
+export const caseStudyPathsQuery = groq`*[_type == "kopen" && defined(slug.current)][]{
   'params': { 'slug': slug.current }
 }`;
 

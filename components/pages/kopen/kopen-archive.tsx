@@ -1,35 +1,35 @@
 "use client";
 
-import { Aanbod } from '@/types'
+import { Kopen } from '@/types'
 import Grid from '@/components/shared/ui/grid'
 import Section from '@/components/shared/ui/section'
 import Container from '@/components/global/container'
-import AanbodCard from '@/components/shared/aanbod-card'
+import KopenCard from '@/components/shared/kopen-card'
 import Button from '@/components/shared/button'
 import { useState } from 'react'
 import { toTitleCase } from "@/utils/string";
 
-type AanbodGalleryProps = {
+type KopenGalleryProps = {
   showFilters?: boolean;
-  aanbod: Aanbod[];
+  kopen: Kopen[];
 }
 
-export default function AanbodArchive({  
-  aanbod,
+export default function KopenArchive({  
+  kopen,
   showFilters = true,
-}: AanbodGalleryProps ) {
+}: KopenGalleryProps ) {
   
   const [activeCategory, setActiveCategory] = useState("Alle");
 
-  const projectCategories = new Set(aanbod.map((aanbod) => aanbod.type));
+  const projectCategories = new Set(kopen.map((kopen) => kopen.type));
   const categories = Array.from(projectCategories);
 
   const filteredProjects =
     activeCategory === "Alle"
-      ? aanbod
-      : aanbod.filter(
-          (aanbod) =>
-            aanbod.type === activeCategory
+      ? kopen
+      : kopen.filter(
+          (kopen) =>
+            kopen.type === activeCategory
         );
 
 
@@ -62,13 +62,13 @@ export default function AanbodArchive({
       }
        <Grid className='md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {
-          ...filteredProjects.map((aanbod, index) => (
+          ...filteredProjects.map((kopen, index) => (
             <div
-            key={`${aanbod._id}-${index}`}>
+            key={`${kopen._id}-${index}`}>
                
           
-            <li key={aanbod._id}>
-              <AanbodCard aanbod={aanbod} />
+            <li key={kopen._id}>
+              <KopenCard kopen={kopen} />
             </li>
           
         

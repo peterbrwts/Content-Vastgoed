@@ -5,8 +5,8 @@ import { fieldGroups } from '../utils/field-groups'
 import { seoFields } from '../utils/seo-fields'
 
 export default defineType({
-  name: 'aanbod',
-  title: 'Aanbod panden',
+  name: 'kopen',
+  title: 'Panden te koop',
   type: 'document',
   icon: CaseIcon,
   fieldsets: [

@@ -4,7 +4,7 @@ import { SectionComponent } from "@/components/shared/ui/sections";
 
 import { 
   getHomePage, 
-  getLatestAanbod, 
+  getLatestKopen, 
   getLatestPosts 
 } from '@/sanity/lib/sanity.fetch'
 
@@ -32,21 +32,21 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
 
   const pageData = await getHomePage()
-  const aanbodData = await getLatestAanbod()
+  const kopenData = await getLatestKopen()
   const postsData = await getLatestPosts()
 
   const [ 
     page, 
-    aanbod, 
+    kopen, 
     posts 
-  ] = await Promise.all([pageData, aanbodData, postsData])
+  ] = await Promise.all([pageData, kopenData, postsData])
 
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && process.env.SANITY_API_READ_TOKEN) {
     return (
       <PreviewProvider token={process.env.SANITY_API_READ_TOKEN}>
-        <HomePreview page={page} aanbod={aanbod} posts={posts} />
+        <HomePreview page={page} kopen={kopen} posts={posts} />
       </PreviewProvider>
     )
   }
@@ -60,7 +60,7 @@ export default async function Home() {
         btnText={page.btnText}
         btnDestination={page.btnDestination}
       />
-      <HomeCaseStudies aanbod={aanbod} />
+      <HomeCaseStudies kopen={kopen} />
       <div>
       {page?.sections.map((section) => (
         <div key={section.title}>

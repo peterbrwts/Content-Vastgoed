@@ -2,7 +2,7 @@ import { PagesItem } from './items/pages';
 import { SettingsItem } from './items/settings';
 import { PostsItem } from './items/documents/post';
 import type { StructureResolver } from "sanity/structure";
-import { AanbodItem } from './items/documents/aanbod';
+import { KopenItem } from './items/documents/kopen';
 
 export const structure: StructureResolver = (S, _context) =>
   S.list()
@@ -12,7 +12,7 @@ export const structure: StructureResolver = (S, _context) =>
       S.divider(),
       PagesItem(S),
       S.divider(),
-      AanbodItem(S),
+      KopenItem(S),
       S.divider(),
       PostsItem(S),
       S.divider(),

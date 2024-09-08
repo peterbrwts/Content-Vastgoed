@@ -4,17 +4,17 @@ import type { QueryParams } from '@sanity/client'
 import { client } from "../config/sanity.client";
 
 import { 
-  allAanbodQuery, 
+  allKopenQuery, 
   allPostCategoriesQuery, 
   allPostsQuery, 
   blogPageQuery, 
-  caseAanbodSlugQuery, 
+  caseKopenSlugQuery, 
   caseStudyPageQuery,
-  aanbodPageQuery,
+  kopenPageQuery,
   OverPageQuery,
   contactPageQuery, 
   homePageQuery, 
-  latestAanbodQuery, 
+  latestKopenQuery, 
   latestPostsQuery, 
   postBySlugQuery, 
   postCategoryBySlugQuery, 
@@ -26,8 +26,8 @@ import {
 
 import { 
   BlogPagePayload, 
-  Aanbod, 
-  AanbodPayload,
+  Kopen, 
+  KopenPayload,
   OverPagePayload,
   ContactPagePayload, 
   HomePagePayload, 
@@ -82,10 +82,10 @@ export async function getOverPage() {
 }
 
 
-export async function getAanbodPage() {
-  return sanityFetch<AanbodPayload>({
-    query: aanbodPageQuery,
-    tags: ['aanbodPage']
+export async function getKopenPage() {
+  return sanityFetch<KopenPayload>({
+    query: kopenPageQuery,
+    tags: ['kopenPage']
   })
 }
 
@@ -155,24 +155,24 @@ export async function getPostCategoryBySlug(slug: string) {
   })
 }
 
-export async function getLatestAanbod() {
-  return sanityFetch<Aanbod[]>({
-    query: latestAanbodQuery,
-    tags: ['aanbod']
+export async function getLatestKopen() {
+  return sanityFetch<Kopen[]>({
+    query: latestKopenQuery,
+    tags: ['kopen']
   })
 }
 
-export async function getAllAanbod() {
-  return sanityFetch<Aanbod[]>({
-    query: allAanbodQuery,
-    tags: ['aanbod']
+export async function getAllKopen() {
+  return sanityFetch<Kopen[]>({
+    query: allKopenQuery,
+    tags: ['kopen']
   })
 }
 
-export async function getAanbodBySlug(slug: string) {
-  return sanityFetch<Aanbod>({
-    query: caseAanbodSlugQuery,
+export async function getKopenBySlug(slug: string) {
+  return sanityFetch<Kopen>({
+    query: caseKopenSlugQuery,
     params: { slug: slug },
-    tags: ['aanbod'],
+    tags: ['kopen'],
   })
 }

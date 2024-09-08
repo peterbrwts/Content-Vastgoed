@@ -1,15 +1,15 @@
-import { Aanbod } from '@/types'
+import { Kopen } from '@/types'
 import Tag from '@/components/shared/tag'
 import Flex from '@/components/shared/ui/flex'
 import Button from '@/components/shared/button'
 import Header from '@/components/shared/ui/header'
 import Container from '@/components/global/container'
 
-export default function AanbodHeader({ aanbod }: {
-  aanbod: Aanbod
+export default function KopenHeader({ kopen }: {
+  kopen: Kopen
 }) {
 
-  const { title, shortDescription, location, type} = aanbod
+  const { title, shortDescription, location, type} = kopen
 
   return (
     <Header className='mt-20 mb-20 -ml-1'>

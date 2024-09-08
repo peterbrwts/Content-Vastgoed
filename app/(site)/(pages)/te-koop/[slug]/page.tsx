@@ -4,7 +4,7 @@ import { getAanbodBySlug } from '@/sanity/lib/sanity.fetch'
 import { generateStaticSlugs } from "@/utils/generate-static-slugs";
 
 // components
-import Aanbod from '@/components/pages/aanbod/aanbod'
+import Aanbod from '@/components/pages/kopen/aanbod'
 import AanbodPreview from '@/components/preview/aanbod-preview';
 import PreviewProvider from "@/components/preview/preview-provider";
 

@@ -1,10 +1,10 @@
 "use client";
-import { Aanbod, Post } from "@/types";
+import { Kopen, Post } from "@/types";
 import { useLiveQuery } from "@sanity/preview-kit";
 
 // sanity queries
 import { homePageQuery } from "@/sanity/lib/sanity.queries";
-import { latestAanbodQuery } from "@/sanity/lib/sanity.queries";
+import { latestKopenQuery } from "@/sanity/lib/sanity.queries";
 import { latestPostsQuery } from "@/sanity/lib/sanity.queries";
 
 // components
@@ -22,19 +22,19 @@ interface Page {
 
 interface HomePreviewProps {
   page: Page
-  aanbod: Aanbod[]
+  kopen: Kopen[]
   posts: Post[]
 }
 
 export default function HomePreview({ 
   page, 
-  aanbod, 
+  kopen, 
   posts 
 }: HomePreviewProps) {
   return (
     <>
       <HomeHeroPreview page={page} />
-      <HomeCaseStudiesPreview aanbod={aanbod} />
+      <HomeCaseStudiesPreview kopen={kopen} />
       <HomePostsPreview posts={posts} />
     </>
   )
@@ -60,16 +60,16 @@ function HomeHeroPreview({ page }: HomeHeroPreviewProps) {
 }
 
 interface HomeCaseStudiesPreviewProps {
-  aanbod: Aanbod[]
+  kopen: Kopen[]
 }
 
-function HomeCaseStudiesPreview({ aanbod }: HomeCaseStudiesPreviewProps) {
+function HomeCaseStudiesPreview({ kopen }: HomeCaseStudiesPreviewProps) {
 
-  const [data] = useLiveQuery(aanbod, latestAanbodQuery);
+  const [data] = useLiveQuery(kopen, latestKopenQuery);
   
   return (
     <HomeCaseStudies 
-    aanbod={data} 
+    kopen={data} 
     />
   )
 }

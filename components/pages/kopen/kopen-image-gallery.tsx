@@ -1,14 +1,14 @@
 import Image from 'next/image'
-import { Aanbod } from '@/types'
+import { Kopen } from '@/types'
 import Grid from '@/components/shared/ui/grid'
 import Section from '@/components/shared/ui/section'
 import Container from '@/components/global/container'
 
-export default function AanbodImageGallery({ aanbod }: {
-  aanbod: Aanbod
+export default function KopenImageGallery({ kopen }: {
+  kopen: Kopen
 }) {
 
-  const { imageGallery: images } = aanbod
+  const { imageGallery: images } = kopen
 
   return (
     <Section className='my-16 md:my-32'>
