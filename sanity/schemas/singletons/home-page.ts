@@ -62,7 +62,7 @@ export default defineType({
       of: [
         {
           type: "reference",
-          to: [{ type: "aanbod" }],
+          to: [{ type: "kopen" }],
         },
       ],
       validation: (Rule) => Rule.unique(),

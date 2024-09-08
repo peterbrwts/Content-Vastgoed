@@ -1,46 +1,46 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getAanbodBySlug } from '@/sanity/lib/sanity.fetch'
+import { getKopenBySlug } from '@/sanity/lib/sanity.fetch'
 import { generateStaticSlugs } from "@/utils/generate-static-slugs";
 
 // components
-import Aanbod from '@/components/pages/kopen/aanbod'
-import AanbodPreview from '@/components/preview/aanbod-preview';
+import Kopen from '@/components/pages/kopen/kopen'
+import KopenPreview from '@/components/preview/kopen-preview';
 import PreviewProvider from "@/components/preview/preview-provider";
 
-interface AanbodPageProps {
+interface KopenPageProps {
   params: { slug: string }
 }
 
-export async function generateMetadata({ params }: AanbodPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: KopenPageProps): Promise<Metadata> {
 
-  const aanbod = await getAanbodBySlug(params.slug)
+  const kopen = await getKopenBySlug(params.slug)
 
   return {
-    title: aanbod.metaTitle,
-    description: aanbod.metaDescription,
-    keywords: aanbod.metaKeywords,
+    title: kopen.metaTitle,
+    description: kopen.metaDescription,
+    keywords: kopen.metaKeywords,
   }
 }
 
 export async function generateStaticParams() {
-  return generateStaticSlugs('aanbod');
+  return generateStaticSlugs('kopen');
 }
 
-export default async function AanbodPage({ params }: AanbodPageProps) {
+export default async function KopenPage({ params }: KopenPageProps) {
 
-  const aanbod = await getAanbodBySlug(params.slug)
+  const kopen = await getKopenBySlug(params.slug)
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && process.env.SANITY_API_READ_TOKEN) {
     return (
       <PreviewProvider token={process.env.SANITY_API_READ_TOKEN}>
-        <AanbodPreview aanbod={aanbod} />
+        <KopenPreview kopen={kopen} />
       </PreviewProvider>
     );
   }
 
   return (
-    <Aanbod aanbod={aanbod} />
+    <Kopen kopen={kopen} />
   )
 }

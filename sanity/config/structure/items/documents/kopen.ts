@@ -7,6 +7,6 @@ export const KopenItem = (S: StructureBuilder) =>
     .icon(FiBriefcase)
     .child(
       S.documentList()
-        .title('Aanbod panden')
+        .title('panden te koop')
         .filter('_type == "kopen"')
       )

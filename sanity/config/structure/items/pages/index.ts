@@ -5,7 +5,7 @@ import { ContactItem } from "./contact";
 import { PrivacyItem } from "./privacy";
 import { TermsItem } from "./terms";
 import { HomeItems } from "./home";
-import { AanbodItem } from "./aanbod";
+import { KopenItem } from "./kopen";
 import { OverItem } from "./over";
 
 
@@ -19,7 +19,7 @@ export const PagesItem = (S: StructureBuilder) =>
         .items([
           HomeItems(S),
           S.divider(),
-          AanbodItem(S),
+          KopenItem(S),
           BlogItem(S),
           OverItem(S),
           ContactItem(S),

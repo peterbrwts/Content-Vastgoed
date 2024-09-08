@@ -17,10 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function AanbodPage() {
+export default async function KopenPage() {
 
   const page = await getKopenPage()
-  const aanbod = await getAllKopen()
+  const kopen = await getAllKopen()
 
   return (
     <>
