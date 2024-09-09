@@ -13,7 +13,7 @@ export default function PreFooterSection() {
 
   return (
     <div className="text-white bg-pre-footer bg-cover">
-      <div className="py-20 bg-primary bg-opacity-50">
+      <div className="py-20 bg-primary">
         <div className="max-w-6xl mx-auto px-6 flex flex-col text-center md:text-start items-center md:items-start gap-y-3">
           
             <h2 className='text-3xl font-bold'>
