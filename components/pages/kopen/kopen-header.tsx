@@ -4,25 +4,41 @@ import Flex from '@/components/shared/ui/flex'
 import Button from '@/components/shared/button'
 import Header from '@/components/shared/ui/header'
 import Container from '@/components/global/container'
+import Image from 'next/image';
+import { FaLocationArrow, FaMapPin, FaSearchLocation } from 'react-icons/fa'
+
 
 export default function KopenHeader({ kopen }: {
   kopen: Kopen
+  
 }) {
 
-  const { title, shortDescription, location, type} = kopen
+  const { title, shortDescription, location, type, price} = kopen
+
+  const Eur = new Intl.NumberFormat('nl-BE', {
+    style: 'currency',
+    currency: 'EUR',
+});
+
+  
 
   return (
     <Header className='mt-20 mb-20 -ml-1'>
       <Container>
         <Flex className='flex-col md:flex-row items-start md:items-end justify-between w-full'>
           <Flex className='flex-col items-start'>
-            <Tag text={type} />
+          <span className="text-2xl font-semibold text-white bg-primary px-2">{Eur.format(price)}</span>
             <Title>
               {title}
             </Title>
-            <Description>
-              {shortDescription}
-            </Description>
+            <p className='text-xl text-primary mb-4 mt-6'><FaMapPin />{location}</p>
+            <Image 
+          src={kopen.image}
+          width={2000}
+          height={600}
+          alt={kopen.title}
+          className='h-[400px] md:h-[600px] object-cover rounded-xl'
+        />
           </Flex>
           {/* <Button
             href={`${url}`}
@@ -41,7 +57,7 @@ function Title({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <h1 className='mt-8 text-4xl md:text-7xl font-light'>
+    <h1 className='text-6xl font-bold text-primary mb-4 mt-6'>
       {children}
     </h1>
   )

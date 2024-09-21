@@ -20,8 +20,10 @@ export default function KopenPreview({ kopen }: KopenPreviewProps) {
   return (
     <>
       <KopenHeader kopen={data} />
-      <KopenOverview kopen={data} />
       <KopenImageGallery kopen={data} />
+      
+      <KopenOverview kopen={data} />
+      
     </>
   )
 }

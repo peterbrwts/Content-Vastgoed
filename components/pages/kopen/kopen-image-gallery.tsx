@@ -18,8 +18,8 @@ export default function KopenImageGallery({ kopen }: {
             <li key={image.url}>
               <Image 
                 src={image.url}
-                width={800}
-                height={800}
+                width={550}
+                height={500}
                 alt={image.alt}
                 className='w-full rounded-xl'
               />

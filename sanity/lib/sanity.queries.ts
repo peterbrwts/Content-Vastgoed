@@ -198,13 +198,21 @@ export const latestKopenQuery = groq`*[_type == 'kopen'][0...3] | order(_created
   'image': image.asset->url,
   bedroom,
   type,
-  surface
+  surface,
+  price
 }`
 
 export const caseKopenSlugQuery = groq`*[_type == 'kopen' && slug.current == $slug][0]{
   _id,
   title,
   location,
+  price,
+  surface,
+  bedroom,
+  epc,
+  year,
+  livingSurface,
+  terraceSurface,
   type,
   shortDescription,
   overview,
