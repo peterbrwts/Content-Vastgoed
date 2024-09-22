@@ -34,12 +34,11 @@ export default function ClientLayout(props: LayoutProps) {
       {settings.enableBottomBar && (
         <BottomBar settings={settings} />
       )}
-      <Navbar settings={settings} />
-      <MobileNavbar settings={settings} />
+     
       <main>
         {children}
       </main>
-      <Footer settings={settings} />
+    
     </>
   )
 }

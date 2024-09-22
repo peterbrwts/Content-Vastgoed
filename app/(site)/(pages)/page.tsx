@@ -52,25 +52,14 @@ export default async function Home() {
   }
 
   return (
-    <>
-      <HomeHero 
-        heading={page.heading}
-        paragraph={page.paragraph}
-        image={page.image}
-        btnText={page.btnText}
-        btnDestination={page.btnDestination}
-      />
-      <HomeCaseStudies kopen={kopen} />
-      <div>
-      {page?.sections.map((section) => (
-        <div key={section.title}>
-          <SectionComponent section={section} />
-        </div>
-      ))}
-      </div>
-      <Cta />
-      <HomeLatestPosts posts={posts} />
-      {/* <HomeLatestPosts posts={posts} /> */}
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-4">
+    <h1 className="text-5xl font-bold text-gray-800 mb-4">
+      Content Vastgoed is Coming Soon
+    </h1>
+    <p className="text-lg text-gray-600 mb-8">
+      We are working hard to bring you a great experience. Stay tuned!
+    </p>
+   
+  </div>
   )
 }
