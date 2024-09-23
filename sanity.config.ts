@@ -1,12 +1,12 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
-import { schemaTypes } from '@/sanity/schemas';
+import { schemaTypes } from './sanity/schemas';
 import { structure } from './sanity/config/structure';
-import {defaultDocumentNode} from '@/sanity/config/structure/default-document-node';
+import {defaultDocumentNode} from './sanity/config/structure/default-document-node';
 import { apiVersion, dataset, projectId, studioUrl, useCdn } from './sanity/config/sanity.api';
 
-const title = 'Content Vastgoed'
+const title = 'content_vastgoed'
 
 const config = defineConfig({
   title: title,
