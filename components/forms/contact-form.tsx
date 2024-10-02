@@ -1,98 +1,195 @@
-'use client'
-import { useState } from 'react';
+"use client"
+import { useState, FormEvent } from 'react';
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
+interface Errors {
+  name?: boolean;
+  email?: boolean;
+  subject?: boolean;
+  message?: boolean;
 }
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+export default function ContactForm() {
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const [buttonText, setButtonText] = useState<string>("Send");
+  
+  const [errors, setErrors] = useState<Errors>({});
+  const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
+  const [showFailureMessage, setShowFailureMessage] = useState<boolean>(false);
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+  const handleValidation = (): boolean => {
+
+    let tempErrors: Errors = {}
+    let isValid = true
+
+    if (name.length <= 0) {
+      tempErrors["name"] = true
+      isValid = false
+    }
+    if (email.length <= 0) {
+      tempErrors["email"] = true
+      isValid = false
+    }
+    if (subject.length <= 0) {
+      tempErrors["subject"] = true
+      isValid = false
+    }
+    if (message.length <= 0) {
+      tempErrors["message"] = true
+      isValid = false
+    }
+
+    setErrors({ ...tempErrors })
+    return isValid
+  }
+  
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault()
+
+    let isValidForm = handleValidation()
+
+    if (isValidForm) {
+      setButtonText("Sending");
+      const res = await fetch("/api/contact", {
+        body: JSON.stringify({
+          email: email,
+          name: name,
+          subject: subject,
+          message: message,
+        }),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        method: "POST",
       });
 
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
+      const response = await res.json()
+
+      if (response.status === 400) {
+        setShowSuccessMessage(false)
+        setShowFailureMessage(true)
+        setButtonText("Send")
+        setName("")
+        setEmail("")
+        setMessage("")
+        setSubject("")
+        return
       }
-    } catch (error) {
-      console.error('Error submitting form', error);
+
+      setShowSuccessMessage(true)
+      setShowFailureMessage(false)
+      setButtonText("Send")
+      setName("")
+      setEmail("")
+      setMessage("")
+      setSubject("")
     }
-  };
+  }
 
   return (
-    <div className="max-w-md mx-auto">
-      {submitted ? (
-        <div className="p-4 bg-green-100 text-green-700 rounded">Message Sent!</div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={4}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600"
-            >
-              Send
-            </button>
-          </div>
-        </form>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-4xl flex flex-col mx-auto mt-10 md:mt-12 mb-12 md:px-8 md:py-8 md:border rounded-lg md:bg-[#f9f9f7]"
+    >
+      <label
+        htmlFor="name"
+        className="text-gray-900 font-normal"
+      >
+        Your Name<span className="text-red-500">*</span>
+      </label>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+        name="name"
+        placeholder='Jane Doe'
+        className="mt-2 py-3 pl-4 border focus:outline-none rounded-lg focus:ring-1 ring-green-500 font-light text-gray-800 bg-white"
+      />
+      {errors?.name && (
+        <p className="mt-1 text-red-500">Your name cannot be empty.</p>
       )}
-    </div>
-  );
-};
-
-export default ContactForm;
+      <label
+        htmlFor="email"
+        className="mt-4 text-gray-900 font-normal"
+      >
+        E-mail<span className="text-red-500">*</span>
+      </label>
+      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+        placeholder='janedoe@email.com'
+        className="mt-2 py-3 pl-4 border focus:outline-none rounded-lg focus:ring-1 ring-green-500 font-light text-gray-800 bg-white"
+      />
+      {errors?.email && (
+        <p className="mt-1 text-red-500">Email cannot be empty.</p>
+      )}
+      <label
+        htmlFor="subject"
+        className="mt-4 text-gray-900 font-normal"
+      >
+        Subject<span className="text-red-500">*</span>
+      </label>
+      <input
+        type="text"
+        name="subject"
+        value={subject}
+        onChange={(e) => {
+          setSubject(e.target.value);
+        }}
+        placeholder='I need a web developer!'
+        className="mt-2 py-3 pl-4 border focus:outline-none rounded-lg focus:ring-1 ring-green-500 font-light text-gray-800 bg-white"
+      />
+      {errors?.subject && (
+        <p className="mt-1 text-red-500">Subject cannot be empty.</p>
+      )}
+      <label
+        htmlFor="message"
+        className="mt-4 text-gray-900 font-normal"
+      >
+        Message<span className="text-red-500">*</span>
+      </label>
+      <textarea
+        name="message"
+        value={message}
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+        placeholder='How can I help?'
+        className="mt-2 py-3 pl-4 min-h-[200px] border focus:outline-none rounded-lg focus:ring-1 ring-green-500 font-light text-gray-800 bg-white"
+      ></textarea>
+      {errors?.message && (
+        <p className="mt-1 text-red-500">Message body cannot be empty.</p>
+      )}
+      <div className="flex flex-row items-center justify-start">
+        <button
+          type="submit"
+          className="px-10 mt-8 py-2 bg-black text-gray-50 font-light text-lg flex flex-row items-center rounded-lg"
+        >
+          {buttonText}
+        </button>
+      </div>
+      <div className="text-left">
+        {showSuccessMessage && (
+          <p className="text-green-600 font-medium text-sm my-2">
+            Thank you! Your Message has been sent.
+          </p>
+        )}
+        {showFailureMessage && (
+          <p className="text-red-500">
+            Oops! Something went wrong, please try again.
+          </p>
+        )}
+      </div>
+    </form>
+  )
+}
