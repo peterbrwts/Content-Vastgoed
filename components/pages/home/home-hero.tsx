@@ -22,7 +22,7 @@ export default function HomeHero({ ...props }: {
   } = props
 
   return (
-    <Section className='pt-16 pb-16 bg-primary text-white'>
+    <Section className='pt-6 pb-6 bg-primary text-white'>
       <Container>
         <Flex className='flex flex-col-reverse md:flex-row justify-between'>
           <Box>
@@ -30,9 +30,9 @@ export default function HomeHero({ ...props }: {
               <Heading>
                 {heading}
               </Heading>
-              <Paragraph>
+              {/* <Paragraph>
                 {paragraph}
-              </Paragraph>
+              </Paragraph> */}
               <Button
                 href={btnDestination}
                 variant="default"
@@ -49,7 +49,7 @@ export default function HomeHero({ ...props }: {
               height={800}
               sizes="(max-width: 1000px) 2000px"
               alt='Guy Content'
-              className='mb-10 md:mb-0 mt-10 md:mt-20 object-contain'
+              className='mb-10 md:mb-0 mt-10 md:mt-6 object-contain'
             />
           </Box>
         </Flex>
@@ -62,7 +62,7 @@ function Heading({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <h1 className='-ml-1 md:-ml-2 text-[12vw] font-semibold leading-none'>
+    <h1 className='-ml-1 md:-ml-2 text-[5vw] font-semibold leading-none lg:mt-20 lg:mb-32'>
       {children}
     </h1>
   )

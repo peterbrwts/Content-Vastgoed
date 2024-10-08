@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import Logo from '@/components/shared/logo'
+import Logo from '../../public/icons/logo.svg'
 import SubscribeForm from './subscribe-form'
 import { SettingsPayload } from '@/types'
 
@@ -13,18 +13,18 @@ export default function Footer(props: FooterProps) {
   const { settings } = props
 
   return (
-    <footer className='bg-white border-t'>
+    <footer className='bg-sand text-white border-t'>
       <div className='max-w-8xl mx-auto p-12 pb-28 md:pb-4 lg:pb-6 px-6 md:px-12'>
         <div className='flex flex-col md:flex-row'>
           <div className='w-full md:w-fit mr-auto pb-8 md:pb-0 border-b md:border-b-0 border-gray-100'>
-            <Logo text={settings.logoText} />
-            <p className='mt-4'>
+            <Logo width={50} height={50} />
+            {/* <p className='mt-4'>
               {settings.footerTagline}
-            </p>
+            </p> */}
             <div className="my-4 flex flex-col gap-y-0">
             <p className="font-bold">Contact:</p>
-            <a href="mailto:info@guycontent.be">
-            info@guycontent.be
+            <a href="mailto:guy@contentvastgoed.be">
+            guy@contentvastgoed.be
             </a>
             <a href="tel:0032495624471"> +32 495 62 44 71</a>
           </div>
