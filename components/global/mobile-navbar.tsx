@@ -6,7 +6,7 @@ import Button from '../shared/button'
 import { IoClose } from 'react-icons/io5'
 import { SettingsPayload } from '@/types'
 import { HiMenuAlt4 } from 'react-icons/hi'
-import Logo from '@/components/shared/logo'
+import Logo from '../../public/icons/logo.svg'
 
 interface MobileNavbarProps {
   settings: SettingsPayload
@@ -20,7 +20,7 @@ export default function MobileNavbar(props: MobileNavbarProps) {
   return (
     <header className='sticky top-0 md:hidden py-4 px-6 md:px-12 border-b z-50 backdrop-blur-sm bg-[#F6F6F1]/90'>
       <Flex className='items-center justify-between'>
-        <Logo text={settings.logoText} />
+        <Logo width={25} height={25} />
         <button 
           aria-label='Navigation Menu'
           onClick={() => setShowMenu(!showMenu)}
