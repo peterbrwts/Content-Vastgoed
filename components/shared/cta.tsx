@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Divider from "./divider";
-import Button from "./button";
+import GhostButton from "./ghostButton";
 
 
 export default function PreFooterSection() {
@@ -26,12 +26,12 @@ export default function PreFooterSection() {
             </p>
          
             
-              <Button 
+              <GhostButton 
                 href="/contact"
                 variant="default"
                 size="default">
                 Neem contact
-              </Button>
+              </GhostButton>
            
         
         </div>

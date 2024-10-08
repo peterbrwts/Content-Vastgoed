@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Box from '@/components/shared/ui/box'
 import Flex from '@/components/shared/ui/flex'
 import Button from '@/components/shared/button'
+import GhostButton from '@/components/shared/ghostButton'
 import Section from '@/components/shared/ui/section'
 import Container from '@/components/global/container'
 
@@ -33,13 +34,13 @@ export default function HomeHero({ ...props }: {
               {/* <Paragraph>
                 {paragraph}
               </Paragraph> */}
-              <Button
+              <GhostButton
                 href={btnDestination}
                 variant="default"
                 size="default"
               >
                 {btnText}
-              </Button>
+              </GhostButton>
             </Flex>
           </Box>
           <Box>
