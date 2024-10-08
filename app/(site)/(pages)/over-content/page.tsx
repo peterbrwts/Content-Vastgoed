@@ -23,7 +23,7 @@ export default async function OverPage() {
   
   return (
     <>
-      <Header heading={page.heading} subheading='Leer Guy Content beter kennen'/>
+      <Header heading={page.heading} subheading=''/>
       <Container>
         <div className='mx-auto md:pt-6 pb-10 px-6 md:px-0 text-lg text-gray-700 blog-content'>
           <Content data={page.content} />

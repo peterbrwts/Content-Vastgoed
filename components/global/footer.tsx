@@ -13,7 +13,7 @@ export default function Footer(props: FooterProps) {
   const { settings } = props
 
   return (
-    <footer className='bg-sand text-white border-t'>
+    <footer className='bg-white border-t'>
       <div className='max-w-8xl mx-auto p-12 pb-28 md:pb-4 lg:pb-6 px-6 md:px-12'>
         <div className='flex flex-col md:flex-row'>
           <div className='w-full md:w-fit mr-auto pb-8 md:pb-0 border-b md:border-b-0 border-gray-100'>
