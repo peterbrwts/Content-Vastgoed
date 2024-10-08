@@ -15,6 +15,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.51.0",
     "@sendgrid/mail": "^7.7.0",
+    "@svgr/webpack": "^8.1.0",
     "alert": "^6.0.2",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.7.0",
