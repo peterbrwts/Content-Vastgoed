@@ -198,6 +198,7 @@ export const latestKopenQuery = groq`*[_type == 'kopen'][0...3] | order(_created
   'image': image.asset->url,
   bedroom,
   type,
+  typePand,
   surface,
   price
 }`

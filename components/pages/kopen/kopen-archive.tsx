@@ -19,17 +19,17 @@ export default function KopenArchive({
   showFilters = true,
 }: KopenGalleryProps ) {
   
-  const [activeCategory, setActiveCategory] = useState("Alle");
+  const [activeCategory, setActiveCategory] = useState("Alle panden");
 
-  const projectCategories = new Set(kopen.map((kopen) => kopen.type));
+  const projectCategories = new Set(kopen.map((kopen) => kopen.typePand));
   const categories = Array.from(projectCategories);
 
   const filteredProjects =
-    activeCategory === "Alle"
+    activeCategory === "Alle panden"
       ? kopen
       : kopen.filter(
           (kopen) =>
-            kopen.type === activeCategory
+            kopen.typePand === activeCategory
         );
 
 
@@ -41,13 +41,13 @@ export default function KopenArchive({
       {
         showFilters && (
           <div className="flex flex-wrap md:flex-row no-scrollbar justify-center md:justify-center mb-10 md:space-x-2">
-          {["Alle", ...categories].map((category, index) => (
+          {["Alle panden", ...categories].map((category, index) => (
             <div key={`${category}-${index}`}>
                 <button
                 className={`border rounded my-1 py-1 px-3 text-sm font-medium ${
                   activeCategory === category
-                    ? "text-primary bg-tertiary border-primary"
-                    : "text-primary bg-tertiary border-transparent"
+                    ? "text-primary bg-secundary border-primary"
+                    : "text-primary bg-sand border-transparent"
                 }`}
                 onClick={() => setActiveCategory(category)}
               >
