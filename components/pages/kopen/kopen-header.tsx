@@ -6,6 +6,8 @@ import Header from '@/components/shared/ui/header'
 import Container from '@/components/global/container'
 import Image from 'next/image';
 import { FaLocationArrow, FaMapPin, FaSearchLocation } from 'react-icons/fa'
+import Link from 'next/link'
+import { strict } from 'assert'
 
 
 export default function KopenHeader({ kopen }: {
@@ -20,7 +22,10 @@ export default function KopenHeader({ kopen }: {
     currency: 'EUR',
 });
 
-  
+
+const address= kopen.location
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
 
   return (
     <Header className='mt-20 mb-20 -ml-1'>
@@ -31,7 +36,12 @@ export default function KopenHeader({ kopen }: {
             <Title>
               {title}
             </Title>
-            <p className='text-xl text-primary mb-4 mt-6'><FaMapPin />{location}</p>
+            <Link 
+            href={googleMapsUrl} target="_blank" rel="noopener noreferrer"
+            className='flex items-center text-xl text-primary mb-4 mt-6'>
+            <FaMapPin className='mr-2'/>{location}
+            </Link>
+            {/* <p className='flex items-center text-xl text-primary mb-4 mt-6'><FaMapPin className='mr-2'/>{location}</p> */}
             <Image 
           src={kopen.image}
           width={2000}

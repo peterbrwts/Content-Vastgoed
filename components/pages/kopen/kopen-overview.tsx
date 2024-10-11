@@ -16,32 +16,32 @@ export default function KopenOverview({ kopen }: {
         <Flex className='flex-col justify-center relative max-w-4xl mx-auto mt-4 md:my-6'>
           <div className='mb-6'>
           <div className="grid md:grid-cols-3 md:gap-4 grid-cols-2 gap-2">
-      <div className="p-4 border border-gray-300 rounded-lg bg-tertiary">
+      <div className="p-4 border border-primary rounded-lg ">
       <FaHome className='mb-4'/>
         <p className="font-semibold">Bewoonbaar oppervlakte</p>
         <p>{kopen.livingSurface}m²</p>
       </div>
-      <div className="p-4 border border-gray-300 rounded-lg bg-tertiary">
+      <div className="p-4 border border-primary rounded-lg">
       <FaRuler className='mb-4'/>
         <p className="font-semibold">Perceel oppervlakte</p>
         <p>{kopen.surface}m²</p>
       </div>
-      <div className="p-4 border border-gray-300 rounded-lg bg-tertiary">
+      <div className="p-4 border border-primary rounded-lg">
       <FaBed className='mb-4'/>
         <p className="font-semibold">Slaapkamers</p>
         <p>{kopen.bedroom}</p>
       </div>
-      <div className="p-4 border border-gray-300 rounded-lg bg-tertiary">
+      <div className="p-4 border border-primary rounded-lg">
       <FaRuler className='mb-4'/>
         <p className="font-semibold">Terras oppervlakte</p>
         <p>{kopen.terraceSurface}m²</p>
       </div>
-      <div className="p-4 border border-gray-300 rounded-lg bg-tertiary">
+      <div className="p-4 border border-primary rounded-lg">
       <FaCalendar className='mb-4'/>
         <p className="font-semibold">Bouwjaar</p>
         <p>{kopen.year}</p>
       </div>
-      <div className="p-4 border border-gray-300 rounded-lg bg-tertiary">
+      <div className="p-4 border border-primary rounded-lg">
       <FaFire className='mb-4'/>
         <p className="font-semibold">EPC</p>
         <p>{kopen.epc}</p>

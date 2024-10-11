@@ -46,8 +46,8 @@ export default function KopenArchive({
                 <button
                 className={`border rounded my-1 py-1 px-3 text-sm font-medium ${
                   activeCategory === category
-                    ? "text-primary bg-secundary border-primary"
-                    : "text-primary bg-sand border-transparent"
+                    ? " text-white bg-primary border-transparent"
+                    : "text-primary bg-secundary border-primary"
                 }`}
                 onClick={() => setActiveCategory(category)}
               >

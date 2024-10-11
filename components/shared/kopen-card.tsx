@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Kopen } from '@/types'
 import { FiArrowUpRight } from 'react-icons/fi'
+import { FaBed, FaFire, FaRestroom, FaRuler } from 'react-icons/fa'
 
 interface KopenCardProps {
   kopen: Kopen
@@ -30,15 +31,19 @@ export default function KopenCard({ kopen }: KopenCardProps) {
         />
         
         <div className='p-[1rem] absolute bottom-0 left-0 right-0 '>
-          <div className='flex items-center justify-between py-2 md:py-3 px-4 md:px-5 text-sm font-semibold   cursor-pointer group rounded-md bg-[#f6f6f2] text-black'>
+        <div className='flex items-center justify-between py-2 md:py-3 px-4 md:px-5 text-sm font-semibold   cursor-pointer group rounded-md bg-primary text-white'>
             <h2>{title} {location}</h2>
           </div>
-          <div className='pt-2 text-white'>
-        <p>Slaapkamers: {bedroom}</p>
-        <p>Oppervlakte: {surface}m²</p>
-      </div>
+        
         </div>
         
+        </div>
+        <div className='relative bottem-0 left-0 right-0 '>
+        
+          <div className='pt-2 text-primary'>
+         <p className='flex items-center'> <FaBed className='mr-2'/> Slaapkamers: {bedroom}</p>
+        <p className='flex items-center'><FaRuler className='mr-2'/> Oppervlakte: {surface}m²</p>
+      </div>
         </div>
       
        
