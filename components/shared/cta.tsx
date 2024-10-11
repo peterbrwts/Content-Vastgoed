@@ -16,7 +16,7 @@ export default function PreFooterSection() {
       <div className="py-20 bg-primary">
         <div className="max-w-6xl mx-auto px-6 flex flex-col text-center md:text-start items-center md:items-start gap-y-3">
           
-            <h2 className='text-3xl font-bold'>
+            <h2 className='text-white -ml-1 text-2xl md:text-3xl font-light leading-none text-left'>
             Ik hoop om je te kunnen bijstaan in al je woonbehoeften.
             </h2>
           

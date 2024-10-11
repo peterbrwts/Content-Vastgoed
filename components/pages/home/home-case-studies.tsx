@@ -22,7 +22,7 @@ export default function HomeCaseStudies({ kopen }: {
         >
           Vind jouw droomvastgoed
         </motion.div> */}
-        <h2 className="text-3xl font-bold text-primary mb-4">Ontdek de nieuwste panden te koop bij Guy Content</h2>
+        <h2 className="text-primary -ml-1 text-2xl md:text-3xl font-light leading-none text-left">Ontdek de nieuwste panden te koop bij Guy Content</h2>
         <Grid className='lg:grid-cols-3 gap-8 md:gap-14 lg:gap-6 w-full'>
           {kopen?.map((item) => (
             <li key={item._id}>

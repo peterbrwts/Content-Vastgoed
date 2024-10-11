@@ -29,7 +29,7 @@ export function SectionComponent({ section }: SectionsProps) {
       <div className="w-full md:w-1/2 pt-4">
        
           <h2
-            className='text-3xl font-bold text-primary mb-4'
+            className='text-primary -ml-1 text-2xl md:text-3xl font-light leading-none text-left pb-4'
           >
             {section.title}
           </h2>

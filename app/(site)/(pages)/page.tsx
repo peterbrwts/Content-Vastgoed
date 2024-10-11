@@ -69,7 +69,7 @@ export default async function Home() {
       ))}
       </div>
       <Cta />
-      <HomeLatestPosts posts={posts} />
+      {/* <HomeLatestPosts posts={posts} /> */}
       {/* <HomeLatestPosts posts={posts} /> */}
     </>
   )

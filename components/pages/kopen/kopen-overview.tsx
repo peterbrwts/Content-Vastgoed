@@ -48,9 +48,9 @@ export default function KopenOverview({ kopen }: {
       </div>
     </div>
           </div>
-          <h2 className='text-3xl font-bold text-primary mb-4 mt-6'>Omschrijving</h2>
+          <h2 className='text-primary -ml-1 text-2xl md:text-3xl font-light leading-none text-left mt-6'>Omschrijving</h2>
           <Content  data={kopen.overview} />
-          <h2 className='text-3xl font-bold text-primary mb-4 mt-6'>Eigenschappen</h2>
+          <h2 className='text-primary -ml-1 text-2xl md:text-3xl font-light leading-none text-left mt-6'>Eigenschappen</h2>
           <div className="overflow-x-auto mt-6">
       <table className="min-w-full border-collapse border border-gray-300">
         <thead>
