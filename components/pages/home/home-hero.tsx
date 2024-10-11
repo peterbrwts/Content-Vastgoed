@@ -38,6 +38,7 @@ export default function HomeHero({ ...props }: {
                 href={btnDestination}
                 variant="default"
                 size="default"
+                className='flex items-center'
               >
                 {btnText}
               </GhostButton>
@@ -50,7 +51,7 @@ export default function HomeHero({ ...props }: {
               height={800}
               sizes="(max-width: 1000px) 2000px"
               alt='Guy Content'
-              className='mb-10 md:mb-0 mt-10 md:mt-6 object-contain'
+              className='mb-6 md:mb-0 mt-10 md:mt-6 object-contain'
             />
           </Box>
         </Flex>
@@ -63,7 +64,7 @@ function Heading({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <h1 className='-ml-1 md:-ml-2 text-[5vw] font-semibold leading-none lg:mt-20 lg:mb-32'>
+    <h1 className='lg:-ml-1 md:-ml-2 text-[7vw] lg:text-[5vw] font-semibold leading-none lg:mt-20 mb-6 lg:mb-32'>
       {children}
     </h1>
   )

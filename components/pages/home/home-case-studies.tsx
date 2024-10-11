@@ -14,7 +14,7 @@ export default function HomeCaseStudies({ kopen }: {
   const x = useTransform(scrollYProgress, [0, 1], [0, 600]);
 
   return (
-    <Section className="relative mt-12 mb-6 md:mb-12 pt-28 md:pt-6 overflow-x-hidden">
+    <Section className="relative mt-12 mb-6 md:mb-12 pt-4 lg:pt-28 md:pt-6 overflow-x-hidden">
       <Container>
         {/* <motion.div 
           className='-left-[140px] top-0 absolute text-[32px] md:text-[100px] font-light whitespace-nowrap ' 

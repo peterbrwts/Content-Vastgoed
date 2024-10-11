@@ -24,8 +24,8 @@ export default async function OverPage() {
   return (
     <>
       <Header heading={page.heading} subheading=''/>
-      <Container>
-        <div className='mx-auto md:pt-6 pb-10 px-6 md:px-0 text-lg text-gray-700 blog-content'>
+      <div>
+        <div className='mx-auto md:pt-6 pb-10 px-0 lg:px-6 md:px-0 text-lg text-primary'>
           <Content data={page.content} />
           <div>
       {page?.sections.map((section) => (
@@ -36,8 +36,10 @@ export default async function OverPage() {
       ))}
       </div>
         </div>
-      </Container>
+      </div>
       <Cta />
     </>
   )
 }
+
+

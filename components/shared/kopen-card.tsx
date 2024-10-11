@@ -15,7 +15,7 @@ export default function KopenCard({ kopen }: KopenCardProps) {
   return (
     <article 
       key={title} 
-      className='max-w-6xl mx-auto px-6 mt-10 mb-10'
+      className='max-w-6xl mx-auto px-0 lg:px-6 mt-10 mb-10'
     >
       <Link 
         href={`/te-koop/${slug}`}
