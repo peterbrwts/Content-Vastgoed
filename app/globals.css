@@ -13,3 +13,29 @@ body {
 .blog-content > p:first-of-type {
   margin-top: 0px;
 }
+
+/* styles/globals.css */
+@font-face {
+  font-family: 'CasOlgans';
+  src: url('/fonts/CasOlgans-Regular.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'QuattrocentoSans';
+  src: url('/fonts/QuattrocentoSans-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: Bold;
+}
+
+/* Apply the font globally */
+h1, h2, h3 {
+  font-family: 'QuattrocentoSans', sans-serif; /* Fallback to sans-serif */
+}
+
+
+body, p {
+  font-family: 'CasOlgans-Regular', sans-serif; /* Fallback to sans-serif */
+}
+

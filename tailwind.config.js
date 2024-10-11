@@ -15,9 +15,7 @@ module.exports = {
         sand:"#E69973",
         sandDark:"#e36c62"
       },
-      fontFamily: { 
-        "Jost": ['Jost', 'sans-serif'] 
-    },
+     
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
