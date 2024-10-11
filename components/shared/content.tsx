@@ -26,7 +26,7 @@ const components: PortableTextComponents = {
       return (
         <h2 
           id={`${value._key}`}
-          className='pt-2.5 text-3xl text-[#000]'
+          className='text-primary -ml-1 text-2xl md:text-3xl font-light leading-none text-left pb-4'
         >
           {value.children[0].text}
         </h2>

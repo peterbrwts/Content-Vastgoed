@@ -7,6 +7,7 @@ import { TermsItem } from "./terms";
 import { HomeItems } from "./home";
 import { KopenItem } from "./kopen";
 import { OverItem } from "./over";
+import { GratisSchattingItem } from './gratis-schatting'
 
 
 export const PagesItem = (S: StructureBuilder) =>
@@ -23,6 +24,7 @@ export const PagesItem = (S: StructureBuilder) =>
           BlogItem(S),
           OverItem(S),
           ContactItem(S),
+          GratisSchattingItem(S),
           S.divider(),
           PrivacyItem(S),
           TermsItem(S),

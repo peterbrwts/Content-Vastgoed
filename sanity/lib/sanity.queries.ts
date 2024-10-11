@@ -62,6 +62,18 @@ export const OverPageQuery = groq`*[_type == 'overPage'][0]{
   metaKeywords,
 }`
 
+export const OverPageGratisSchattingQuery = groq`*[_type == 'gratisSchattingPage'][0]{
+  _id,
+  heading,
+  subheading,
+  metaTitle,
+  content,
+  btnText,
+  btnDestination,
+  metaDescription,
+  metaKeywords,
+}`
+
 export const contactPageQuery = groq`*[_type == 'contactPage'][0]{
   _id,
   heading,

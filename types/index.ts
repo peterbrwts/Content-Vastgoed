@@ -156,6 +156,17 @@ export type OverPagePayload = {
   metaKeywords: string
 }
 
+export type GratisSchattingPayload = {
+  _id: string
+  heading: string
+  content: PortableTextBlock
+  btnText: string
+  btnDestination: string
+  metaTitle: string
+  metaDescription: string
+  metaKeywords: string
+}
+
 export type TermsPagePayload = {
   _id: string
   heading: string

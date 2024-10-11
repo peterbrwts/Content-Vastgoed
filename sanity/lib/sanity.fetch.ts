@@ -21,7 +21,8 @@ import {
   postsByCategoryQuery, 
   privacyPageQuery, 
   settingsQuery, 
-  termsPageQuery
+  termsPageQuery,
+  OverPageGratisSchattingQuery
 } from "./sanity.queries";
 
 import { 
@@ -29,6 +30,7 @@ import {
   Kopen, 
   KopenPayload,
   OverPagePayload,
+  GratisSchattingPayload,
   ContactPagePayload, 
   HomePagePayload, 
   Post, 
@@ -77,6 +79,13 @@ export async function getBlogPage() {
 export async function getOverPage() {
   return sanityFetch<OverPagePayload>({
     query: OverPageQuery,
+    tags: ['overPage']
+  })
+}
+
+export async function getGratisSchattingPage() {
+  return sanityFetch<GratisSchattingPayload>({
+    query: OverPageGratisSchattingQuery,
     tags: ['overPage']
   })
 }
