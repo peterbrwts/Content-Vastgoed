@@ -34,7 +34,7 @@ export function SectionComponent({ section }: SectionsProps) {
             {section.title}
           </h2>
        
-          <p className="text-primary text-left">{section.description}</p>
+          <p className="text-base text-primary text-left">{section.description}</p>
         
       </div>
     );
