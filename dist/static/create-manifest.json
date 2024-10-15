@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "createdAt": "2024-10-15T10:01:35.511Z",
+  "workspaces": [
+    {
+      "name": "default",
+      "title": "content_vastgoed",
+      "basePath": "/studio",
+      "dataset": "production",
+      "schema": "38a9e759.create-schema.json"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1809.5 1867.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #282d5d;
+      }
+
+      .cls-2 {
+        stroke: #282d5d;
+        stroke-miterlimit: 10;
+        stroke-width: 6.9px;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Laag_1">
+      <path class="cls-1" d="M90,542.7C90,213.7,330.2,21.8,605.8,21.8s431.7,152.2,431.7,355.1h-213.1c1.4-238.5-115.4-327.6-255.2-327.6s-282.3,165.9-282.3,463.4,181.9,430.4,367.9,430.4,270.1-71.3,354.3-230.3l13.6,4.1c-35.3,137.1-186,319.4-441.2,319.4S90,859.4,90,542.7Z"/>
+      <path class="cls-1" d="M935.1,876.4h176.5l313.6,906.1,312.2-906.1h43.4l-331.2,959.6h-183.2l-331.2-959.6Z"/>
+      <line class="cls-2" x1="1754.7" y1="54.2" x2="22" y2="1804.1"/>
+    </g>
+  </g>
+</svg>

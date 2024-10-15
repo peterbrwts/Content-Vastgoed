@@ -1,0 +1,2014 @@
+[
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Brand Name"
+      },
+      {
+        "name": "logoText",
+        "type": "string"
+      },
+      {
+        "name": "enableBottomBar",
+        "type": "boolean",
+        "fieldset": "bottomBar"
+      },
+      {
+        "hidden": "conditional",
+        "name": "bottomBarMessage",
+        "type": "string",
+        "fieldset": "bottomBar"
+      },
+      {
+        "hidden": "conditional",
+        "name": "enableBottomBarLink",
+        "type": "boolean",
+        "fieldset": "bottomBar"
+      },
+      {
+        "hidden": "conditional",
+        "name": "bottomBarLinkUrl",
+        "type": "string",
+        "fieldset": "bottomBar"
+      },
+      {
+        "description": "Add the full hexcode (#1AC1DE). You can find inspiration on www.colorhunt.co.",
+        "hidden": "conditional",
+        "name": "bottomBarLinkColor",
+        "type": "string",
+        "fieldset": "bottomBar"
+      },
+      {
+        "hidden": "conditional",
+        "name": "bottomBarLinkText",
+        "type": "string",
+        "fieldset": "bottomBar"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "menuItem"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to menu items"
+          }
+        ],
+        "name": "navbarMenuItems",
+        "type": "array",
+        "title": "Menu Items",
+        "fieldset": "navbar"
+      },
+      {
+        "name": "navbarButtonText",
+        "type": "string",
+        "title": "Button Text",
+        "fieldset": "navbar"
+      },
+      {
+        "name": "navbarButtonLink",
+        "type": "string",
+        "title": "Button Link",
+        "fieldset": "navbar"
+      },
+      {
+        "name": "footerTagline",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "initialValue": false,
+        "name": "enableSubscribeForm",
+        "type": "boolean",
+        "fieldset": "footer"
+      },
+      {
+        "hidden": "conditional",
+        "name": "subscribeFormTitle",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "hidden": "conditional",
+        "name": "subscribeFormPlaceholder",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "name": "footerCopyright",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "name": "enableFootnote",
+        "type": "boolean",
+        "fieldset": "footer"
+      },
+      {
+        "hidden": "conditional",
+        "name": "footerFootnoteText",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "hidden": "conditional",
+        "name": "enableFootnoteLink",
+        "type": "boolean",
+        "fieldset": "footer"
+      },
+      {
+        "hidden": "conditional",
+        "name": "footerFootnoteLinkText",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "hidden": "conditional",
+        "name": "footerFootnoteLink",
+        "type": "string",
+        "fieldset": "footer"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "menuItem"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to menu items"
+          }
+        ],
+        "name": "footerQuickLinks",
+        "type": "array",
+        "title": "Quick Links",
+        "fieldset": "footer"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "menuItem"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to menu items"
+          }
+        ],
+        "name": "footerSocialLinks",
+        "type": "array",
+        "title": "Social Links",
+        "fieldset": "footer"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "menuItem"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to menu items"
+          }
+        ],
+        "name": "footerLegalLinks",
+        "type": "array",
+        "title": "Legal Links",
+        "fieldset": "footer"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "bottomBar"
+      },
+      {
+        "name": "navbar"
+      },
+      {
+        "name": "footer"
+      }
+    ],
+    "name": "settings",
+    "type": "document",
+    "title": "Site Settings"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "to": [
+          {
+            "type": "postCategory"
+          }
+        ],
+        "name": "category",
+        "type": "reference"
+      },
+      {
+        "to": [
+          {
+            "type": "author"
+          }
+        ],
+        "name": "author",
+        "type": "reference"
+      },
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "name": "readTime",
+        "type": "number",
+        "title": "Read Time - Minutes"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h2",
+                "title": "H2"
+              },
+              {
+                "value": "h3",
+                "title": "H3"
+              },
+              {
+                "value": "h4",
+                "title": "H4"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "type": "postImageBlock",
+            "title": "Image Block"
+          },
+          {
+            "type": "postQuoteBlock",
+            "title": "Quote Block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "post"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to blog posts"
+          }
+        ],
+        "name": "relatedPosts",
+        "type": "array"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "post",
+    "type": "document",
+    "title": "Blog Posts"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "postCategory",
+    "type": "document",
+    "title": "Post Categories"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "author",
+    "type": "document",
+    "title": "Authors"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "link",
+        "type": "string"
+      }
+    ],
+    "name": "menuItem",
+    "type": "document",
+    "title": "Menu Items"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 50
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "type",
+        "type": "string",
+        "title": "Pand Type (Te koop of te huur: Shown in filters on project page. Unique value will create a new filter)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "location",
+        "type": "string",
+        "title": "Location (Property Location)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "price",
+        "type": "number",
+        "title": "Vraagprijs"
+      },
+      {
+        "name": "shortDescription",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "overview",
+        "type": "array",
+        "title": "Pand Overview"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "description": "Reccommended image size: 600px (width) - 600px (height)",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "imageGallery",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 50
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "typePand",
+        "type": "string",
+        "title": "Type pand (Appartement, Villa, ...)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 50
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "bedroom",
+        "type": "number",
+        "title": "Aantal slaapkamers"
+      },
+      {
+        "name": "livingSurface",
+        "type": "number",
+        "title": "Bewoonbaar oppervlakte"
+      },
+      {
+        "name": "surface",
+        "type": "number",
+        "title": "Oppervlakte perceel"
+      },
+      {
+        "name": "terraceSurface",
+        "type": "number",
+        "title": "Oppervlakte terras"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "year",
+        "type": "string",
+        "title": "Bouwjaar"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Instapklaar",
+              "value": "instapklaar"
+            },
+            {
+              "title": "Te renoveren",
+              "value": "te renoveren"
+            },
+            {
+              "title": "Gerenoveerd",
+              "value": "gerenoveerd"
+            },
+            {
+              "title": "Af te breken",
+              "value": "gf te breken"
+            },
+            {
+              "title": "Licht op te frissen",
+              "value": "licht op te frissen"
+            },
+            {
+              "title": "Luxe",
+              "value": "luxe"
+            },
+            {
+              "title": "Nieuwe",
+              "value": "nieuwe"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "instapklaar",
+                  "te renoveren",
+                  "gerenoveerd",
+                  "gf te breken",
+                  "licht op te frissen",
+                  "luxe",
+                  "nieuwe"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "condition",
+        "type": "string",
+        "title": "Algemene staat"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "parking",
+        "type": "number",
+        "title": "Aantal garage/parkeerplaats"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "epc",
+        "type": "string",
+        "title": "EPC-score"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "water",
+        "type": "string",
+        "title": "Watertoets: gebouwscore, G-score, P-score"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "flood",
+        "type": "string",
+        "title": "Overstromingsgevoeligheid"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Wettelijk",
+              "value": "wettelijk"
+            },
+            {
+              "title": "Conventioneel",
+              "value": "conventioneel"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "wettelijk",
+                  "conventioneel"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "easement",
+        "type": "string",
+        "title": "Erfdienstbaarheid"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Ja",
+                  "value": "1"
+                },
+                {
+                  "title": "Nee",
+                  "value": "2"
+                }
+              ],
+              "layout": "radio",
+              "direction": "horizontal"
+            },
+            "name": "permit",
+            "type": "string",
+            "title": "Vergunning uitgereikt",
+            "fieldset": "urbanism"
+          },
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Ja",
+                  "value": "1"
+                },
+                {
+                  "title": "Nee",
+                  "value": "2"
+                }
+              ],
+              "layout": "radio",
+              "direction": "horizontal"
+            },
+            "name": "preemption",
+            "type": "string",
+            "title": "Verkooprecht",
+            "fieldset": "urbanism"
+          },
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Ja",
+                  "value": "1"
+                },
+                {
+                  "title": "Nee",
+                  "value": "2"
+                }
+              ],
+              "layout": "radio",
+              "direction": "horizontal"
+            },
+            "name": "judicial",
+            "type": "string",
+            "title": "Rechelijke uitspraak",
+            "fieldset": "urbanism"
+          },
+          {
+            "name": "subdivision",
+            "type": "string",
+            "title": "Verkavelingsvergunning (Ja/nee)",
+            "fieldset": "urbanism"
+          },
+          {
+            "name": "destination",
+            "type": "string",
+            "title": "Bestemming",
+            "fieldset": "urbanism"
+          }
+        ],
+        "fieldsets": [
+          {
+            "name": "urbanism"
+          }
+        ],
+        "name": "urbanism",
+        "type": "object",
+        "title": "Stedenbouw"
+      },
+      {
+        "name": "reference",
+        "type": "string",
+        "title": "Referentie"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "kopen",
+    "type": "document",
+    "title": "Panden te koop"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "name": "paragraph",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "name": "btnText",
+        "type": "string",
+        "title": "Button Text",
+        "fieldset": "content"
+      },
+      {
+        "name": "btnDestination",
+        "type": "string",
+        "title": "Button Link",
+        "fieldset": "content"
+      },
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image",
+        "title": "Hero Image"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "kopen"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to panden te koop"
+          }
+        ],
+        "name": "featuredPandenTekoop",
+        "type": "array",
+        "title": "Panden te koop in de kijker"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "name": "image",
+                "type": "image"
+              },
+              {
+                "name": "showOnLeft",
+                "type": "boolean"
+              }
+            ],
+            "type": "object",
+            "title": "Section"
+          }
+        ],
+        "name": "sections",
+        "type": "array"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "homePage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "name": "subheading",
+        "type": "string",
+        "title": "SubHeading",
+        "fieldset": "content"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "kopenPage",
+    "type": "document",
+    "title": "Panden te koop"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "name": "image",
+                "type": "image"
+              },
+              {
+                "name": "showOnLeft",
+                "type": "boolean"
+              }
+            ],
+            "type": "object",
+            "title": "Section"
+          }
+        ],
+        "name": "sections",
+        "type": "array"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "overPage",
+    "type": "document",
+    "title": "Over Content Vastgoed"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "blogPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "name": "subheading",
+        "type": "string",
+        "title": "SubHeading",
+        "fieldset": "content"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "contactPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "name": "btnText",
+        "type": "string",
+        "title": "Button Text",
+        "fieldset": "content"
+      },
+      {
+        "name": "btnDestination",
+        "type": "string",
+        "title": "Button Link",
+        "fieldset": "content"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "gratisSchattingPage",
+    "type": "document",
+    "title": "Gratis schatting"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "privacyPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string",
+        "fieldset": "content"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "name": "metaTitle",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaDescription",
+        "type": "string",
+        "fieldset": "seo"
+      },
+      {
+        "name": "metaKeywords",
+        "type": "string",
+        "fieldset": "seo"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "content"
+      },
+      {
+        "name": "seo",
+        "title": "SEO"
+      }
+    ],
+    "name": "termsPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "postImageBlock",
+    "type": "object",
+    "title": "Image Block"
+  },
+  {
+    "fields": [
+      {
+        "name": "quote",
+        "type": "string"
+      },
+      {
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "description": "Enter a hex code (1D40AF)",
+        "name": "bgColor",
+        "type": "string",
+        "title": "Background Color"
+      },
+      {
+        "description": "Enter a hex code (000000)",
+        "name": "iconColor",
+        "type": "string"
+      },
+      {
+        "description": "Enter a hex code (FFFFFF)",
+        "name": "textColor",
+        "type": "string"
+      }
+    ],
+    "name": "postQuoteBlock",
+    "type": "object",
+    "title": "Quote Block"
+  }
+]
