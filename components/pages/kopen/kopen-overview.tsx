@@ -71,7 +71,7 @@ export default function KopenOverview({ kopen }: { kopen: Kopen }) {
           <h3 className="font-semibold">Contacteer Guy</h3>
           <p className="text-sm pb-2">Voor vragen of een bezoek, stuur een e-mail:</p>
           <a 
-            href="mailto:guy@contentvast.be" // Replace with your email address
+            href="mailto:guy@contentvast.be?subject=Reactie op zoekertje te koop&body=Beste, Graag had ik meer info over dit pand of een bezoek ingepland."
             className="text-white hover:underline pt-2"
           >
             guy@contentvast.be
