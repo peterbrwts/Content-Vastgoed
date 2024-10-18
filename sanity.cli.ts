@@ -8,6 +8,7 @@ export default defineCliConfig({
     projectId: "nyjc2nrg",
     dataset: "production",
   },
+  studioHost: 'contentvastgoed',
   server: {
     hostname: "contentvastgoed.be",
   },
