@@ -19,7 +19,7 @@ export default function BlogCategories({ categories }: {
             'bg-white': pathname === '/blog'
           })}
         >
-          All Posts
+          All Postsd
         </Link>
       </li>
       {categories.map((category) => (

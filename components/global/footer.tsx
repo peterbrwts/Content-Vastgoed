@@ -76,7 +76,7 @@ interface QuickLinksProps {
 function QuickLinks({ footerQuickLinks }: QuickLinksProps) {
   return (
     <div>
-      <h5 className='mb-6 font-medium'>
+      <h5 className='mb-6 font-bold'>
         Quick Links
       </h5>
       <ul>
@@ -85,6 +85,7 @@ function QuickLinks({ footerQuickLinks }: QuickLinksProps) {
             <Link href={`${item.link}`}>
               {item.title}
             </Link>
+            
           </li>
         ))}
       </ul>
@@ -99,7 +100,7 @@ interface SocialLinksProps {
 function SocialLinks({ footerSocialLinks }: SocialLinksProps) {
   return (
     <div>
-      <h5 className='mb-6 font-medium'>
+      <h5 className='mb-6 font-bold'>
         Socials
       </h5>
       <ul>
