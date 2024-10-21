@@ -24,7 +24,7 @@ export default function KopenImageGallery({ kopen }: { kopen: Kopen }) {
   return (
     <Section className="my-16 md:my-32">
       <Container>
-        <Grid className="grid-cols-2 gap-5 md:gap-16 max-w-4xl mx-auto">
+        <Grid className="grid-cols-3 gap-1 md:gap-4 max-w-4xl mx-auto">
           {images.map((image, index) => (
             <li key={image.url} onClick={() => openModal(index)} className="cursor-pointer">
               <Image
